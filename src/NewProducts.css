@@ -1,0 +1,77 @@
+.new-products-setions {
+  padding: 70px 0px;
+  /* position: relative; */
+  /* height: 37rem; */
+}
+.new-products-setions .new-products-headding-box {
+  padding: 50px 0px;
+  background-color: #000;
+}
+.new-products-setions .new-products-headding-box .new-products-headdings {
+  width: 90%;
+  height: 150px;
+  /* height: 100px; */
+  margin: auto;
+  color: #fff;
+}
+.new-products-setions .new-products-headding-box .new-products-headdings h2 {
+  font-size: 1.75rem;
+  font-weight: 300;
+  text-align: left;
+}
+.new-products-setions .new-products-list {
+  width: 90%;
+  margin: auto;
+  padding-bottom: 40px;
+  margin-top: -10% ;
+  /* position: absolute;
+    top: 45%;
+    left: 5%; */
+}
+.new-products-setions .new-products-list .new-products-list-box {
+  color: #000;
+  /* display: none; */
+}
+.new-products-setions .new-products-list .new-products-list-box .products-tabs {
+  color: #fff;
+}
+
+.new-products {
+  width: 90%;
+  position: relative;
+  margin: auto;
+}
+.new-products img {
+  width: 100%;
+}
+.new-products .popular-btn{
+    position: absolute;
+    top: 5%;
+    left: 8%;
+}
+.new-products .price-btn{
+    position: absolute;
+    top: 60%;
+    left: 8%;
+}
+.product-content{
+    text-align: left;
+}
+.product-content h6{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 7px;
+}
+
+
+
+.product-favorite-icon{
+    text-align: left;
+    color: #000;
+}
+.product-eye-icon{
+    text-align: right;
+    color: #000;
+}

@@ -1,13 +1,138 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* new-Arrival-section */
+
+.new-Arrival-section {
+  padding: 170px 0px 70px 0px;
+  width: 95%;
+  margin: auto;
+}
+.new-Arrival-plus {
+  background: url(./assets/images/plus.png);
+  background-size: 25px;
+  padding: 92px 0;
+}
+.new-Arrival-section .new-Arrival-image {
+  width: 85%;
+  margin: auto;
+  position: relative;
+}
+.new-Arrival-section .new-Arrival-image img {
+  width: 100%;
+}
+.new-Arrival-section .new-Arrival-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(6, 7, 31, 0.55);
+  pointer-events: none;
+}
+.new-Arrival-section .new-Arrival-image .new-arrival-content_box {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  color: #fff;
+}
+
+.new-Arrival-section
+  .new-Arrival-image
+  .new-arrival-content_box
+  .arrival-setting-icons {
+  font-size: 1.5rem;
+  line-height: 43px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  
+}
+.new-Arrival-section .new-Arrival-image .new-arrival-content_box h4 {
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+ 
+}
+.new-Arrival-section .new-Arrival-image .new-arrival-content_box h2 {
+  font-size: 78px;
+  font-weight: 300;
+  line-height: 69px;
+  margin-bottom: 1rem;
+}
+
+/* top-brands-section */
+.top-brands-section {
+  padding: 50px 0px;
+  width: 70%;
+  margin: auto;
+}
+.top-brands-section .heading-title {
+  margin-bottom: 3.125rem;
+}
+.top-brands-section .heading-title h3 {
+  font-size: 2.125rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+.top-brands-section div img {
+  margin: auto;
+}
+.slick-prev:before, .slick-next:before{
+  display: none !important;
+}
+
+/* footer-section */
+
+.footer-section {
+  padding: 50px 0px;
+  background-color: #000;
+  color: #fff;
+}
+.footer-section .footer {
+  width: 90%;
+  margin: auto;
+}
+.footer-widget-title {
+  padding-bottom: 20px;
+}
+.footer-widget-title h6 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: left;
+}
+.footer-about {
+  padding: 15px 0px;
+}
+.footer-about p {
+  text-align: left;
+}
+
+.copy-right-box {
+  width: 90%;
+  margin: auto;
+  padding-top: 15px;
+  padding-bottom: 0;
+}
+.copy-right-box .copy-right-pay {
+  text-align: left;
+}
+.copy-right-box .copry-tight-content p {
+  text-align: right;
 }
