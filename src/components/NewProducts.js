@@ -24,7 +24,8 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import { PiCurrencyInrBold } from 'react-icons/pi';
-
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Avatar from '@mui/material/Avatar';
 
 // Images
 import accessories1 from "../assets/images/accessories/a-1-a.jpg";
@@ -50,17 +51,9 @@ import women7 from "../assets/images/women/7-item-a.jpg";
 import women8 from "../assets/images/women/8-item-a.jpg";
 import women9 from "../assets/images/women/9-item-a.jpg";
 
-// import { useState } from "react";
 
 const NewProducts = () => {
   const [value, setValue] = React.useState("1");
-
-  // const {show, setShow} = useState(true);
-
-  //   const pBtn = ()=>{
-  //     setShow(!show)
-  //   }
-
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -104,17 +97,6 @@ const NewProducts = () => {
       },
     ],
   };
-
-
-  const popularBtn = 'true';
-// debugger
-  if(popularBtn==='true'){
-    console.log('Popular Btn Done')
-    
-  }else{
-    console.log('No Popular Btn')
-  }
-
 
   const accessories = [
     { 
@@ -331,22 +313,31 @@ const NewProducts = () => {
 
                 <Slider {...settings}>
                 {accessories.map((path) => (
-                  <div>
-                    <Card sx={{ maxWidth: '100%' }} key={path.id} className="new-products">
+                  <div key={path.id} >
+                    <Card sx={{ maxWidth: '100%' }} className="new-products">
                       
                       <CardMedia component="img" image={path.image} alt={path.productTitle} />
-
 
                         <Button variant="contained" color={path.popularBtnColors} className="popular-btn" size="small">
                                 {path.popular}
                         </Button>
 
                         <Button variant="contained" color="secondary" className="price-btn" size="small">
-                                <PiCurrencyInrBold /> {path.price}
+                          <PiCurrencyInrBold /> {path.price}
                         </Button>
+
+                          <div className="product-cart-icon">
+                            <Stack direction="row" spacing={1}>
+                                <Avatar className="product-avatar-cart-box">
+                                  <ShoppingCartIcon  className="roduct-avatar-cart"/>
+                                </Avatar>
+                              </Stack>
+                          </div>
+
                       <CardContent>
                         <Typography variant="body2">
                             <div className="product-content">
+                              
                                 <h6>{path.productTitle}</h6>
                                
                                 <Stack spacing={1}>
@@ -388,8 +379,8 @@ const NewProducts = () => {
 
               <Slider {...settings}>
                 {gadgets.map((path) => (
-                  <div>
-                    <Card sx={{ maxWidth: '100%' }} key={path.id} className="new-products">
+                  <div key={path.id}>
+                    <Card sx={{ maxWidth: '100%' }}  className="new-products">
                       
                       <CardMedia component="img" image={path.image} alt={path.productTitle} />
                         <Button variant="contained" color={path.popularBtnColors} className="popular-btn" size="small">
@@ -399,6 +390,15 @@ const NewProducts = () => {
                         <Button variant="contained" color="secondary" className="price-btn" size="small">
                                 <PiCurrencyInrBold /> {path.price}
                         </Button>
+
+                        <div className="product-cart-icon">
+                            <Stack direction="row" spacing={1}>
+                                <Avatar className="product-avatar-cart-box">
+                                  <ShoppingCartIcon  className="roduct-avatar-cart"/>
+                                </Avatar>
+                              </Stack>
+                          </div>
+
                       <CardContent>
                         <Typography variant="body2">
                             <div className="product-content">
@@ -443,8 +443,8 @@ const NewProducts = () => {
 
               <Slider {...settings}>
                 {men.map((path) => (
-                  <div>
-                    <Card sx={{ maxWidth: '100%' }} key={path.id} className="new-products">
+                  <div key={path.id}>
+                    <Card sx={{ maxWidth: '100%' }} className="new-products">
                       
                       <CardMedia component="img" image={path.image} alt={path.productTitle} />
                         <Button variant="contained" color={path.popularBtnColors} className="popular-btn" size="small">
@@ -454,6 +454,15 @@ const NewProducts = () => {
                         <Button variant="contained" color="secondary" className="price-btn" size="small">
                                 <PiCurrencyInrBold /> {path.price}
                         </Button>
+
+                        <div className="product-cart-icon">
+                            <Stack direction="row" spacing={1}>
+                                <Avatar className="product-avatar-cart-box">
+                                  <ShoppingCartIcon  className="roduct-avatar-cart"/>
+                                </Avatar>
+                              </Stack>
+                          </div>
+
                       <CardContent>
                         <Typography variant="body2">
                             <div className="product-content">
@@ -498,8 +507,8 @@ const NewProducts = () => {
 
               <Slider {...settings}>
                 {women.map((path) => (
-                  <div>
-                    <Card sx={{ maxWidth: '100%' }} key={path.id} className="new-products">
+                  <div key={path.id}>
+                    <Card sx={{ maxWidth: '100%' }} className="new-products">
                       
                       <CardMedia component="img" image={path.image} alt={path.productTitle} />
                       
@@ -510,6 +519,15 @@ const NewProducts = () => {
                         <Button variant="contained" color="secondary" className="price-btn" size="small">
                                 <PiCurrencyInrBold /> {path.price}
                         </Button>
+
+                        <div className="product-cart-icon">
+                            <Stack direction="row" spacing={1}>
+                                <Avatar className="product-avatar-cart-box">
+                                  <ShoppingCartIcon  className="roduct-avatar-cart"/>
+                                </Avatar>
+                              </Stack>
+                          </div>
+
                       <CardContent>
                         <Typography variant="body2">
                             <div className="product-content">

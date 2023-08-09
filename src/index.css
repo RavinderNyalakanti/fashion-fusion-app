@@ -12,6 +12,56 @@ code {
     monospace;
 }
 
+
+
+/* shop-by-category */
+
+.shop-by-category{
+  padding: 70px 0px;
+  width: 95%;
+  margin: auto;
+}
+.shop-by-category .shop-category-tiltle{
+  padding: 40px 0px;
+}
+.shop-category-box{
+  position: relative;
+}
+.iron-overlay-content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(6,7,31,.55);
+  pointer-events: none;
+}
+.iron-overlay-holder{
+  padding: 1.5rem;
+}
+.iron-overlay-holder{
+  position: absolute;
+  top: 70%;
+  left: 5%;
+  color: #fff;
+}
+.iron-overlay-holder h6{
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.iron-overlay-holder p{
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+
+
+
 /* new-Arrival-section */
 
 .new-Arrival-section {

@@ -75,3 +75,24 @@
     text-align: right;
     color: #000;
 }
+
+.product-cart-icon .product-avatar-cart-box{
+  background-color: #283593;
+  padding: 10px;
+  position: absolute;
+  top: 65%;
+  right: 10%;
+  transition: all 1s;
+  cursor: pointer;
+}
+
+.product-cart-icon .product-avatar-cart-box:hover{
+  position: absolute;
+  top: 60%;
+  transition: all 1s;
+
+}
+
+.css-i4bv87-MuiSvgIcon-root{
+  font-size: 2.5rem;
+}
