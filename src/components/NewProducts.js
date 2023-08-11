@@ -84,7 +84,7 @@ const NewProducts = () => {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 2,
         },
       },
 
