@@ -77,13 +77,14 @@
 }
 
 .product-cart-icon .product-avatar-cart-box{
-  background-color: #283593;
+  background-color: #0b91de;
   padding: 10px;
   position: absolute;
   top: 65%;
   right: 10%;
   transition: all 1s;
-  cursor: pointer;
+  cursor: pointer; 
+  
 }
 
 .product-cart-icon .product-avatar-cart-box:hover{
