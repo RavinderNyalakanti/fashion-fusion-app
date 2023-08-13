@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home-container {
+  /* height: 100vh; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0px;
+
+}
+
+.image-container {
+  width: 90%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  /* margin-top: -10vh;  */
+  border-radius: 15px;
+}
+
+/* .banner-heading-box::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(6, 7, 31, .59);
+} */
+
+.new-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.banner-heading-box {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  
+}
+
+.shop_now-btn {
+  width: 150px;
+  margin: 0 auto !important;
+  background-color: #fbfbfb !important;
+  color: #000 !important;
+}
+
+.home-container .image-container .banner-heading-box .home-heading {
+  font-size: 96px;
+  margin-bottom: 20px;
+  font-weight: 300;
+  letter-spacing: -1.5px;
+  line-height: 92px;
+  color: #fff;
+}
+.home-heading2{
+  display: none;
+}
+.home-container .image-container .banner-heading-box .home-para {
+  font-size: 27px;
+  line-height: 32px;
+  font-weight: 300;
+  color: #fff;
+
+}
+
+
+.home-main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+}
+
+.home-main-container .second-container-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 90%;
+  margin: auto;
+  padding: 70px 0px;
+}
+
+.second-container-card .service-container {
+  background-color: #fff;
+  box-shadow: 0px 2px 10px #d8d7d7;
+  padding: 25px 15px;
+  height: 150px;
+  border-radius: 10px;
+  /* display: flex;  */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: block;
+  width: 100%;
+  position: relative;
+}
+
+.service-title {
+  color: #000;
+  font-family: 'roboto';
+  font-size: 1.5rem;
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+.service-description {
+  color: rgba(0, 0, 0, .7);
+  font-family: 'roboto';
+}
+
+.icon-container {
+  position: absolute;
+  left: 4%;
+  top: -22%;
+
+}
+
+.icon-container .avatar {
+  background-color: #0b91de;
+  padding: 40px;
+  font-size: 20px;
+}
+
+.icon-container .avatar .shopping-icon {
+  /* background-color: #283593; */
+  padding: 30px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+  font-size: 2.5rem !important;
+}
+
+
+
+
+
+
+
+
+/* responsive css */
+
+
+
+@media screen and (max-width: 1200px) {
+
+
+  .home-para {
+    font-size: 34px;
+    font-weight: 300;
+    line-height: 32px
+  }
+
+}
+
+@media screen and (max-width:1025px) {
+
+
+  .icon-container .avatar {
+    padding: 30px;
+  }
+
+  .css-i4bv87-MuiSvgIcon-root {
+    font-size: 1.9rem !important;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  /* banner */
+
+  .home-container .image-container .banner-heading-box .home-heading {
+    font-size: 40px;
+    line-height: 41px;
+    font-weight: 300;
+
+  }
+
+
+
+  /* end of banner responsive css */
+  .second-container-card .service-container {
+    margin-bottom: 50px;
+    height: 200px;
+  }
+
+  .icon-container {
+    position: absolute;
+    left: 44%;
+    top: 10%;
+
+  }
+
+  .service-title {
+    margin-top: 65px;
+  }
+}
+
+@media screen and (max-width:426px) {
+
+  .home-para {
+    display: none;
+    font-size: 23px;
+  }
+
+  .home-main-container .second-container-card {
+    padding: 20px 0px;
+  }
+  .home-heading{
+    display: none;
+  }
+  .home-heading2{
+    display: block;
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 300;
+    letter-spacing: 0;
+    margin-bottom: 15px!important;
+  }
+}
+
+@media screen and (max-width:376px) {
+
+  .icon-container {
+    left: 40%;
+  }
+}
+
+@media screen and (max-width:321px) {
+
+  .home-para {
+    display: none;
+  }
+
+  h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+
+  .home-container .image-container .banner-heading-box .home-heading {
+    font-size: 22px;
+    line-height: 22px;
+    letter-spacing: 0;
+    margin-bottom: 15px !important;
+  }
+}

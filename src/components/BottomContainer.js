@@ -3,16 +3,17 @@ import NewArrival from "./NewArrival";
 import TopBrands from "./TopBrands";
 import NewProducts from "./NewProducts";
 import ShopByCategory from "./ShopByCategory";
-
-const Home = () => {
+import Footer from './Footer'
+const BottomContainer = () => {
   return (
     <div>
       <ShopByCategory/>
       <NewProducts/>
       <NewArrival />
-      <TopBrands />
+      <TopBrands />  
+      <Footer/>
     </div>
   );
 };
 
-export default Home;
+export default BottomContainer

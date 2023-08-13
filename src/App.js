@@ -1,14 +1,24 @@
 
-import './App.css';
-import Footer from './components/Footer';
-import Home from './components/Home';
-
+import './App.css'; 
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Main from './components/Main'; 
+import Home from './components/Home'
+import Shop from './components/Shop'
+import Category from './components/Category'
+// import  Login  from './components/Login'
 
 function App() {
   return (
     <div className="App">
-      <Home/>
-      <Footer />
+      {/* <Login/> */}
+      <BrowserRouter>  
+      <Main/> 
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/shoping' element={<Shop/>}/>
+        <Route path='/category' element={<Category/>}/>
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }

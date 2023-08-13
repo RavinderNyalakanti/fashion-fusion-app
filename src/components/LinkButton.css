@@ -1,0 +1,15 @@
+.button-link {
+    display: inline-block;
+    padding: 11px 20px;
+    text-decoration: none;
+    color: white;
+    position: relative; /* Add relative positioning */
+    transition: color 0.2s; /* Add transition for color change */
+    border-bottom: 3px solid transparent; /* Set initial border-bottom */
+  }
+  
+  .button-link.active {
+    color: rgb(250, 164, 83); /* Change text color on active */
+    border-bottom-color: rgb(250, 164, 83); /* Change border-bottom color on active */
+  }
+  

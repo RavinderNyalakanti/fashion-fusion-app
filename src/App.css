@@ -4,21 +4,15 @@
   padding: 0;
   text-decoration: none;
 }
-ul,ol{
-  list-style-type: none;
-}
 
 ::selection{
   background-color: #283593;
   color: #fff;
 }
-body{
-  color: rgba(0,0,0,.87);
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1;
-  background: #f3f3f4;
+ol,ul{
+  list-style-type: none;
 }
+
 
 .App {
   text-align: center;
@@ -58,8 +52,6 @@ body{
     transform: rotate(360deg);
   }
 }
-
-
 
 
 /* Responsive */
