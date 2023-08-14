@@ -41,7 +41,8 @@
   .icon {
     color: #fff;
     margin-right: 10px;
-    font-size: 30px;
+    font-size: 30px; 
+    margin-top:10px;
   }
   
   .icon-1 {
@@ -438,3 +439,6 @@
     display: flex; 
   }
 }
+
+
+ 
