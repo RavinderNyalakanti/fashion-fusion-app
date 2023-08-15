@@ -10,7 +10,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
+    height: 100px;
     background-color: #1564b3; 
      
   }
@@ -37,6 +37,13 @@
   }
   .website-logo-img{
       height: 60px;
+  } 
+
+  /* shop icon */   
+
+  .shop-icon{
+    height:20px; 
+    width:20px;
   }
   .icon {
     color: #fff;
@@ -441,4 +448,18 @@
 }
 
 
- 
+ /* Add a class for the open state */
+.dropdown-opened .menu {
+  display: block;
+}
+
+/* Hide the menu by default */
+.menu {
+  display: none;
+  /* Add other styling properties */
+}
+
+/* Apply the hover effect to the trigger button */
+.trigger-button:hover + .dropdown-opened .menu {
+  display: block;
+}

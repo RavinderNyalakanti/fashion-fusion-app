@@ -1,33 +1,47 @@
 /* eslint-disable no-undef */
+
 import React, { useState, useRef, useEffect } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { MdLocalGroceryStore } from 'react-icons/md';
+
+// import { MdLocalGroceryStore } from 'react-icons/md';
+// import { GiShoppingBag } from 'react-icons/gi'; 
+
 import { AiFillHeart } from 'react-icons/ai';
-import { GiShoppingBag } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Link } from 'react-router-dom'
-import { TbSearch } from 'react-icons/tb';
+// import { TbSearch } from 'react-icons/tb'; 
+
 import LinkButton from '../LinkButton';
 import websiteLogo from '../../assets/images/collections/web-logo.png'
 import myLogo from '../../assets/images/collections/my-image.jpg'
-import Popup from 'reactjs-popup'
+// import Popup from 'reactjs-popup' 
+
 import './NavBar.css';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Popper from '@mui/material/Popper';
-import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state';
-import Fade from '@mui/material/Fade';
-import Paper from '@mui/material/Paper';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import LogoutIcon from '@mui/icons-material/Logout';
-import SettingsIcon from '@mui/icons-material/Settings';
+// import Typography from '@mui/material/Typography';
+// import Button from '@mui/material/Button';
+// import Popper from '@mui/material/Popper';
+// import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state';
+// import Fade from '@mui/material/Fade';
+// import Paper from '@mui/material/Paper';
+// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+// import LogoutIcon from '@mui/icons-material/Logout';
+// import SettingsIcon from '@mui/icons-material/Settings';
 
 import { Dropdown } from '@mui/base/Dropdown';
 import { Menu } from '@mui/base/Menu';
 import { MenuButton } from '@mui/base/MenuButton';
 import { MenuItem, menuItemClasses } from '@mui/base/MenuItem';
-import { styled } from '@mui/system';
+
+import Avatar from '@mui/material/Avatar';
+// import FolderIcon from '@mui/icons-material/Folder';
+import { fontSize, margin, styled } from '@mui/system';
+import Stack from '@mui/material/Stack';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Badge from '@mui/material/Badge';
+
+
+
 
 const blue = {
   100: '#DAECFF',
@@ -120,7 +134,6 @@ const TriggerButton = styled(MenuButton)(
   `,
 );
 
-
 function Navbar() {
   // const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [activeButton, setActiveButton] = useState(null);
@@ -161,35 +174,53 @@ function Navbar() {
     };
   };
 
+
+
   return (
     <header className='main-container' >
       <div className='welcome-container'>
         <h1 className='heading'>Welcome to our fashion store</h1>
         <ul className='list-items'>
           <li>
-            <MdLocalGroceryStore className='icon' />
+            <Stack fontSize='10px' direction="row" spacing={2}>
+              <Badge style={{marginTop:'10px',fontSize:'7px'}} badgeContent={4} color="primary">
+              <Avatar style={{ backgroundColor: '#ef5f46' }}>
+                <ShoppingCartIcon style={{height:'20px',width:'20px'}} className='shop-icon' />
+              </Avatar>
+
+              </Badge>
+              
+            </Stack>
           </li>
           <li>
-            <AiFillHeart className='icon' />
+          <Stack fontSize='10px' direction="row" spacing={2}>
+              <Badge style={{marginTop:'10px',fontSize:'5px'}} badgeContent={2} color="primary">
+              <Avatar style={{marginLeft:'10px', backgroundColor: '#ef5f46' }}>
+              <AiFillHeart style={{height:'20px',width:'20px'}} className='shop-icon' />
+              </Avatar>
+
+              </Badge>
+              
+            </Stack>
           </li>
           <li>
-          <Dropdown>
-                <TriggerButton>
-                <img className='image-logo' alt='logo' src={myLogo} />
-                </TriggerButton>
-                <Menu slots={{ listbox: StyledListbox }}>
-                  <StyledMenuItem onClick={createHandleMenuClick('product')}>
-                    Profile
-                  </StyledMenuItem>
-                  <StyledMenuItem onClick={createHandleMenuClick('cart')}>
-                    Settings
-                  </StyledMenuItem>
-                  <StyledMenuItem onClick={createHandleMenuClick('checkout')}>
-                       Logout
-                  </StyledMenuItem>
-                  
-                </Menu>
-              </Dropdown>
+            <Dropdown>
+              <TriggerButton>
+                <Avatar alt="Remy Sharp" src={myLogo} />
+              </TriggerButton>
+              <Menu slots={{ listbox: StyledListbox }}>
+                <StyledMenuItem onClick={createHandleMenuClick('product')}>
+                  Profile
+                </StyledMenuItem>
+                <StyledMenuItem onClick={createHandleMenuClick('cart')}>
+                  Settings
+                </StyledMenuItem>
+                <StyledMenuItem onClick={createHandleMenuClick('checkout')}>
+                  Logout
+                </StyledMenuItem>
+
+              </Menu>
+            </Dropdown>
           </li>
 
         </ul>
@@ -243,12 +274,12 @@ function Navbar() {
             </LinkButton> */}
               <Dropdown>
                 <TriggerButton><LinkButton
-              id='/shoping'
-              activeButton={activeButton}
-              setActiveButton={setActiveButton}
-            >
-              SHOPING
-            </LinkButton></TriggerButton>
+                  id='/shoping'
+                  activeButton={activeButton}
+                  setActiveButton={setActiveButton}
+                >
+                  SHOPING
+                </LinkButton></TriggerButton>
                 <Menu slots={{ listbox: StyledListbox }}>
                   <StyledMenuItem onClick={createHandleMenuClick('product')}>
                     PRODUCT DETAILS
@@ -257,10 +288,10 @@ function Navbar() {
                     CART
                   </StyledMenuItem>
                   <StyledMenuItem onClick={createHandleMenuClick('checkout')}>
-                   CHEKOUT
+                    CHEKOUT
                   </StyledMenuItem>
                   <StyledMenuItem onClick={createHandleMenuClick('payment')}>
-                   PAYMENT
+                    PAYMENT
                   </StyledMenuItem>
                 </Menu>
               </Dropdown>
@@ -282,17 +313,17 @@ function Navbar() {
 
 
             <li>
-            <Dropdown>
+              <Dropdown>
                 <TriggerButton><LinkButton
-              id='/category'
-              activeButton={activeButton}
-              setActiveButton={setActiveButton}
-            >
-              CATEGORY
-            </LinkButton></TriggerButton>
+                  id='/category'
+                  activeButton={activeButton}
+                  setActiveButton={setActiveButton}
+                >
+                  CATEGORY
+                </LinkButton></TriggerButton>
                 <Menu slots={{ listbox: StyledListbox }}>
                   <StyledMenuItem onClick={createHandleMenuClick('men')}>
-                   MEN
+                    MEN
                   </StyledMenuItem>
                   <StyledMenuItem onClick={createHandleMenuClick('women')}>
                     WOMEN
@@ -301,7 +332,7 @@ function Navbar() {
                     GADGETS
                   </StyledMenuItem>
                   <StyledMenuItem onClick={createHandleMenuClick('accessories')}>
-                        ACCESSORIES
+                    ACCESSORIES
                   </StyledMenuItem>
                 </Menu>
               </Dropdown>
