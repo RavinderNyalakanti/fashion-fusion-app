@@ -180,6 +180,7 @@ function Navbar() {
     <header className='main-container' >
       <div className='welcome-container'>
         <h1 className='heading'>Welcome to our fashion store</h1>
+        
         <ul className='list-items'>
           <li>
             <Stack fontSize='10px' direction="row" spacing={2}>
