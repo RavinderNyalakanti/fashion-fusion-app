@@ -180,11 +180,11 @@ function Navbar() {
     <header className='main-container' >
       <div className='welcome-container'>
         <h1 className='heading'>Welcome to our fashion store</h1>
-        
+
         <ul className='list-items'>
           <li>
             <Stack fontSize='10px' direction="row" spacing={2}>
-              <Badge style={{marginTop:'10px',fontSize:'7px'}} badgeContent={4} color="primary">
+              <Badge style={{marginTop:'10px',fontSize:'7px'}} badgeContent={4} color="secondary">
               <Avatar style={{ backgroundColor: '#ef5f46' }}>
                 <ShoppingCartIcon style={{height:'20px',width:'20px'}} className='shop-icon' />
               </Avatar>
@@ -195,7 +195,7 @@ function Navbar() {
           </li>
           <li>
           <Stack fontSize='10px' direction="row" spacing={2}>
-              <Badge style={{marginTop:'10px',fontSize:'5px'}} badgeContent={2} color="primary">
+              <Badge style={{marginTop:'10px',fontSize:'5px'}} badgeContent={2} color="secondary">
               <Avatar style={{marginLeft:'10px', backgroundColor: '#ef5f46' }}>
               <AiFillHeart style={{height:'20px',width:'20px'}} className='shop-icon' />
               </Avatar>
