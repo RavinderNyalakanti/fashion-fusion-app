@@ -8,6 +8,7 @@ import Category from './components/Category'
 import Accessories from './components/Accessories';
 import AdminPanel from './components/AdminPanel';
 import ContactUs from './components/ContactUs';
+import CheckOut from './components/Shop/CheckOut';
 // import  Login  from './components/Login'
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='/accessories' element={<Accessories/>}/>
         <Route path='/admin-panel' element={<AdminPanel/>}/>
         <Route path='/contact' element={<ContactUs/>}/>
+        <Route path='/checkout' element={<CheckOut/>}/>
       </Routes>
       </BrowserRouter>
     </div>

@@ -288,8 +288,11 @@ function Navbar() {
                   <StyledMenuItem onClick={createHandleMenuClick('cart')}>
                     CART
                   </StyledMenuItem>
-                  <StyledMenuItem onClick={createHandleMenuClick('checkout')}>
-                    CHEKOUT
+                  <StyledMenuItem onClick={createHandleMenuClick('checkout')}> 
+                   <Link to='/checkout'>
+                   CHEKOUT
+                   </Link>
+                    
                   </StyledMenuItem>
                   <StyledMenuItem onClick={createHandleMenuClick('payment')}>
                     PAYMENT
