@@ -9,6 +9,10 @@
   background-color: #283593;
   color: #fff;
 }
+body{
+  background-color: #ebe8e8;
+}
+
 ol,ul{
   list-style-type: none;
 }
