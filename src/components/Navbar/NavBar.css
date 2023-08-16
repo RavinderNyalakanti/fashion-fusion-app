@@ -364,9 +364,11 @@
     color:#fff; 
     font-size: 26px; 
     align-self: flex-start; 
-    position: relative; 
-    bottom: 18%; 
-    margin-right: 20px;
+    position: absolute; 
+    top: 15px;
+    right: 15px;
+    /* bottom: 18%; 
+    margin-right: 20px; */
   } 
  .input-container{
   display: flex; 
