@@ -11,10 +11,32 @@ import ContactUs from './components/ContactUs';
 import CheckOut from './components/Shop/CheckOut';
 // import  Login  from './components/Login'
 
+import {useState, useEffect} from 'react';
+import PropagateLoader from "react-spinners/PropagateLoader";
+
+const color = [
+  '#290af6'
+]
+
+
 function App() {
+
+  const [loading , setLoading] = useState(false)
+  useEffect(()=>{
+    setLoading(true)
+    setTimeout(()=>{
+      setLoading(false)
+    },5000)
+  },[])
+
   return (
+    
     <div className="App">
-      {/* <Login/> */}
+
+      {
+        loading?
+        <PropagateLoader color={color} loading={loading} size={10}/>
+        :
       <BrowserRouter>  
       <Main/> 
       <Routes>
@@ -27,6 +49,9 @@ function App() {
         <Route path='/checkout' element={<CheckOut/>}/>
       </Routes>
       </BrowserRouter>
+      }
+
+      
     </div>
   );
 }
