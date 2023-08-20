@@ -14,7 +14,45 @@
 .accessrios_select_category h3{
     text-align: left;
 }
-.css-i4bv87-MuiSvgIcon-root{
-    width: 0.554em;
+.list-ofcheck .css-j204z7-MuiFormControlLabel-root{
+   margin-bottom: -16px;
 
+}
+.list-ofcheck .css-i4bv87-MuiSvgIcon-root{
+    width: 1.514rem;
+}
+.product_prices{
+    text-align: left;
+}
+.product-contente{
+    text-align: right;
+}
+.product-contente h3{
+   margin-top: 20px;
+}
+.category-products-list{
+    margin-top: 10px;
+}
+
+.product-imgs{
+    padding: 40px;
+    object-fit: cover !important;
+    height: 250px;
+  
+}
+.accessrios_category_title{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    overflow: hidden;
+    word-break: break-word;
+    word-wrap: break-word;
+    white-space: nowrap;
+}
+.category-products-pricing{
+    text-align: left;
+}
+.category-products-ratings{
+    text-align: right;
 }

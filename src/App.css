@@ -86,9 +86,17 @@ ol,ul{
     margin-bottom: 0.5rem;
   }
 
-
+  /* accessrios_category */
+  .product-contente h3{
+    text-align: center;
+  }
 }
 @media only screen and (max-width: 426px) {
+
+   /* accessrios_category */
+   .product-contente h3{
+    text-align: center;
+  }
   
   /* new-Arrival-section */
   .new-Arrival-section
@@ -115,6 +123,11 @@ ol,ul{
 
 }
 @media only screen and (max-width: 376px) {
+
+    /* accessrios_category */
+    .product-contente h3{
+      text-align: center;
+    }
 
   .new-Arrival-plus{
     padding: 25px 0;
@@ -145,6 +158,11 @@ ol,ul{
 
 }
 @media only screen and (max-width: 321px) {
+
+    /* accessrios_category */
+    .product-contente h3{
+      text-align: center;
+    }
 
   .new-Arrival-plus{
     padding: 25px 0;
