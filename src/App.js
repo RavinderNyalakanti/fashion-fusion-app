@@ -9,6 +9,8 @@ import Accessories from './components/Accessories';
 import AdminPanel from './components/AdminPanel';
 import ContactUs from './components/ContactUs';
 import CheckOut from './components/Shop/CheckOut';
+import Payment from './components/Shop/Payment/payment';
+import Cart from './components/Shop/Cart/cart';
 // import  Login  from './components/Login'
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
         <Route path='/admin-panel' element={<AdminPanel/>}/>
         <Route path='/contact' element={<ContactUs/>}/>
         <Route path='/checkout' element={<CheckOut/>}/>
+        <Route path='/payment-details' element={<Payment/>}/>
+        <Route path='/cart' element={<Cart/>}/>
       </Routes>
       </BrowserRouter>
     </div>
