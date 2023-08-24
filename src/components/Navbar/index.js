@@ -282,7 +282,7 @@ function Navbar() {
                   SHOPING
                 </LinkButton></TriggerButton>
                 <Menu slots={{ listbox: StyledListbox }}>
-                  <StyledMenuItem onClick={createHandleMenuClick('product')}>
+                  <StyledMenuItem onClick={createHandleMenuClick('products-details')}>
                     PRODUCT DETAILS
                   </StyledMenuItem>
                   <StyledMenuItem onClick={createHandleMenuClick('cart')}>

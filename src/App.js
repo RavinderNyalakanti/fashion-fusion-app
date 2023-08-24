@@ -13,6 +13,7 @@ import CheckOut from './components/Shop/CheckOut';
 
 import {useState, useEffect} from 'react';
 import PropagateLoader from "react-spinners/PropagateLoader";
+import ProductsDetails from './components/ProductDetails/ProductsDetails';
 
 const color = [
   '#290af6'
@@ -47,6 +48,7 @@ function App() {
         <Route path='/admin-panel' element={<AdminPanel/>}/>
         <Route path='/contact' element={<ContactUs/>}/>
         <Route path='/checkout' element={<CheckOut/>}/>
+        <Route path='/products-details' element={<ProductsDetails/>}/>
       </Routes>
       </BrowserRouter>
       }
