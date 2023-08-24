@@ -59,6 +59,10 @@
 .proceed-to-checkout-btn{
     margin-bottom: 20px;
    margin-left: 13px;
+} 
+
+hr{
+    color: black;
 }
    /* Apply styles only when the screen width is 768px or less */
 @media screen and (max-width: 768px) { 

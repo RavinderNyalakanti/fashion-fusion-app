@@ -213,7 +213,7 @@ const Cart = () => {
                         <p>$ 127.03</p>
                     </div>
 
-                    <hr style={{color:'#000'}} />
+                    <hr  style={{ border: '1px solid #000' }} />
                     <div className='last-bill-total-cost-contaier'>
                         <h1>Total</h1>
                         <h1>$ 141.77</h1>
