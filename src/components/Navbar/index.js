@@ -184,7 +184,7 @@ function Navbar() {
         <ul className='list-items'>
           <li>
             <Stack fontSize='10px' direction="row" spacing={2}>
-              <Badge style={{marginTop:'10px',fontSize:'7px'}} badgeContent={4} color="secondary">
+              <Badge style={{marginTop:'10px',fontSize:'7px'}} badgeContent={4} color="warning">
               <Avatar style={{ backgroundColor: '#ef5f46' }}>
                 <ShoppingCartIcon style={{height:'20px',width:'20px'}} className='shop-icon' />
               </Avatar>
@@ -195,7 +195,7 @@ function Navbar() {
           </li>
           <li>
           <Stack fontSize='10px' direction="row" spacing={2}>
-              <Badge style={{marginTop:'10px',fontSize:'5px'}} badgeContent={2} color="secondary">
+              <Badge style={{marginTop:'10px',fontSize:'5px'}} badgeContent={2} color="warning">
               <Avatar style={{marginLeft:'10px', backgroundColor: '#ef5f46' }}>
               <AiFillHeart style={{height:'20px',width:'20px'}} className='shop-icon' />
               </Avatar>
@@ -282,7 +282,7 @@ function Navbar() {
                   SHOPING
                 </LinkButton></TriggerButton>
                 <Menu slots={{ listbox: StyledListbox }}>
-                  <StyledMenuItem onClick={createHandleMenuClick('product')}>
+                  <StyledMenuItem onClick={createHandleMenuClick('products-details')}>
                     PRODUCT DETAILS
                   </StyledMenuItem>
                   <StyledMenuItem onClick={createHandleMenuClick('cart')}> 

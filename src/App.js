@@ -13,10 +13,33 @@ import Payment from './components/Shop/Payment/payment';
 import Cart from './components/Shop/Cart/cart';
 // import  Login  from './components/Login'
 
+import {useState, useEffect} from 'react';
+import PropagateLoader from "react-spinners/PropagateLoader";
+import ProductsDetails from './components/ProductDetails/ProductsDetails';
+
+const color = [
+  '#290af6'
+]
+
+
 function App() {
+
+  const [loading , setLoading] = useState(false)
+  useEffect(()=>{
+    setLoading(true)
+    setTimeout(()=>{
+      setLoading(false)
+    },5000)
+  },[])
+
   return (
+    
     <div className="App">
-      {/* <Login/> */}
+
+      {
+        loading?
+        <PropagateLoader style={{marginTop:'10px'}} color={color} loading={loading} size={10}/>
+        :
       <BrowserRouter>  
       <Main/> 
       <Routes>
@@ -31,6 +54,9 @@ function App() {
         <Route path='/cart' element={<Cart/>}/>
       </Routes>
       </BrowserRouter>
+      }
+
+      
     </div>
   );
 }
