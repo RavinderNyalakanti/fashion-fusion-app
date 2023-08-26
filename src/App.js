@@ -15,7 +15,8 @@ import Cart from './components/Shop/Cart/cart';
 
 import {useState, useEffect} from 'react';
 import PropagateLoader from "react-spinners/PropagateLoader";
-import ProductsDetails from './components/ProductDetails/ProductsDetails';
+import ProductsDetails from './components/Shop/ProductDetails/ProductsDetails';
+// import ProductsDetails from './components/Shop/ProductDetails/ProductsDetails';
 
 const color = [
   '#290af6'
@@ -52,6 +53,8 @@ function App() {
         <Route path='/checkout' element={<CheckOut/>}/>
         <Route path='/payment-details' element={<Payment/>}/>
         <Route path='/cart' element={<Cart/>}/>
+        <Route path='/cart' element={<Cart/>}/>
+        <Route path='/product-details' element={<ProductsDetails/>}/>
       </Routes>
       </BrowserRouter>
       }

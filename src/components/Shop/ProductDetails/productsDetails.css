@@ -52,3 +52,28 @@
 .product-content-box .detail-content .tags{
    margin-right: 8px;
 }
+
+.avatar-for-new-social-apps {
+    background-color: #283593;
+    color: white;
+    border: 2px solid #283593;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    box-shadow: inset;
+  }
+  
+  .avatar-for-new-social-apps:hover {
+    background-color: white;
+    color: #283593;
+    border-color: #283593; 
+   
+  } 
+
+  .product-details-avatar-main-container{
+     display: flex; 
+    margin-top: 40px;
+  }  
+  .product-details-avatar-main-container p{
+    margin-right: 15px; 
+    margin-top: 10px;
+  }
+  

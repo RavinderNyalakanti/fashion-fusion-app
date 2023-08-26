@@ -61,8 +61,13 @@
    margin-left: 13px;
 } 
 
-hr{
-    color: black;
+.bottom-total-bill-main-container hr {
+    width: 26%; /* Set the width to fill the container */
+    border: none; /* Remove the default border */
+    height: 1px; /* Set the height of the line */
+    background-color: rgba(138, 134, 134, 0.5); /* Choose a suitable color */
+    margin: 10px 0; /* Add some margin for spacing */ 
+    margin-right: -10px;
 }
    /* Apply styles only when the screen width is 768px or less */
 @media screen and (max-width: 768px) { 
@@ -133,7 +138,14 @@ hr{
         align-self: flex-end; 
         margin-right:-60px;
     }
-    
+    .bottom-total-bill-main-container hr {
+        width: 100%; /* Set the width to fill the container */
+        border: none; /* Remove the default border */
+        height: 1px; /* Set the height of the line */
+        background-color: rgba(138, 134, 134, 0.5); /* Choose a suitable color */
+        /* margin: 10px 0; Add some margin for spacing  */
+      margin-left:100px;
+    }
 
  } 
  @media screen and (width:768px){
@@ -161,5 +173,13 @@ hr{
         display: flex;
         align-self: flex-end; 
         margin-right:2px;
+    }
+    .bottom-total-bill-main-container hr {
+        width: 40%; /* Set the width to fill the container */
+        border: none; /* Remove the default border */
+        height: 1px; /* Set the height of the line */
+        background-color: rgba(138, 134, 134, 0.5); /* Choose a suitable color */
+        margin: 10px 0; /* Add some margin for spacing */ 
+      
     }
  }

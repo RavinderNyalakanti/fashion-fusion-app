@@ -204,16 +204,17 @@ const Cart = () => {
                     </div>
 
                     <div className='last-bill-total-cost-contaier'>
-                        <p>Subtotal</p>
-                        <p>$ 127.03</p>
+                        <p>Shipping</p>
+                        <p>$ 3.37</p>
                     </div>
 
                     <div className='last-bill-total-cost-contaier'>
-                        <p>Subtotal</p>
-                        <p>$ 127.03</p>
+                        <p>Tax(GST)</p>
+                        <p>$ 11.37</p>
                     </div>
+                    
+                        <hr/>
 
-                    <hr  style={{ border: '1px solid #000' }} />
                     <div className='last-bill-total-cost-contaier'>
                         <h1>Total</h1>
                         <h1>$ 141.77</h1>
