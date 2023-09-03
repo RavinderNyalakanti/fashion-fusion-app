@@ -1,0 +1,233 @@
+.products-details-section {
+    padding: 10px 0px;
+    width: 100%;
+}
+
+.products-details-section .products-details-box {
+    padding: 50px 0px;
+    width: 90%;
+    margin: auto !important;
+}
+
+.product-content-box {
+    padding: 15px;
+    text-align: left;
+}
+
+.product-content-box .detail-content a {
+    color: #283593;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+
+}
+
+.product-content-box .detail-content .addAReview {
+    color: #936128;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+.product-content-box .detail-content h2 {
+    font-size: 2.125rem;
+    line-height: 2.5rem;
+    margin: 8px 0;
+    font-weight: 500;
+}
+
+.product-content-box .detail-content .price {
+    color: #ff5722;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 500;
+    margin: 10px 0px;
+}
+
+.product-content-box .detail-content .inr_icons {
+    font-size: 20px;
+}
+
+.product-content-box .detail-content .ul-tags {
+    margin-top: 15px;
+}
+
+.product-content-box .detail-content .ul-tags li {
+    margin-bottom: 15px;
+}
+
+.product-content-box .detail-content .tags {
+    margin-right: 8px;
+}
+
+.avatar-for-new-social-apps {
+    background-color: #283593;
+    color: white;
+    border: 2px solid #283593;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    box-shadow: inset;
+}
+
+.avatar-for-new-social-apps:hover {
+    background-color: white;
+    color: #283593;
+    border-color: #283593;
+
+}
+
+.product-details-avatar-main-container {
+    display: flex;
+    margin-top: 40px;
+}
+
+.product-details-avatar-main-container p {
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+/* Common styles for both large and small screens */
+.product-images {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.main-image img {
+    max-width: 100%;
+}
+
+.thumbnail-images {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 245px;
+}
+
+.thumbnail {
+    max-width: 100px;
+    height: auto;
+    cursor: pointer;
+    transition: border 0.3s;
+}
+
+.thumbnail:hover {
+    border: 2px solid #333;
+}
+
+
+/*styles for the same products */
+
+.you-might-also-like-main-container {
+    background-color: rgb(243, 243, 244);
+   
+    width: 100%;
+    display: flex;
+    align-content: stretch;
+    padding-top: 100px;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+
+.you-might-also-like-main-container .you-might-also-like-grids-container {
+    width: 80%;
+    margin-bottom: 200px;
+} 
+
+
+.card-media-image-main-container {
+    position: relative; /* Create a positioning context for the absolute icon */
+  }
+  
+  .card-media-image-container {
+    position: relative; /* Create a positioning context for the absolute icon */
+    display: inline-block;
+  }
+  
+  .heart-icon,
+  .shopping-cart-icon-for-cart-card-container {
+    position: absolute;
+    color: red; /* Adjust icon color as needed */
+    font-size: 24px; /* Adjust icon size as needed */
+  }
+
+  .heart-icon  {
+    position: absolute;
+    top: 10px; /* Adjust this value to position the icon vertically */
+    right: 10px; /* Adjust this value to position the icon horizontally */
+    color: rgb(152, 151, 151); /* Adjust icon color as needed */
+    font-size: 24px; /* Adjust icon size as needed */
+  }
+  
+  .shopping-cart-icon-for-cart-card-container{
+    bottom: -10px; /* Adjust this value to position the shopping cart icon vertically */
+    right: 10px; /* Adjust this value to position the shopping cart icon horizontally */
+  }
+
+  /* styles.css */
+  /* Apply the hover effect to the h2 element inside the specified class */
+ .heading2-you-might-also-like-container:hover {
+    color: #ff5722; /* New color when hovering */
+  }
+  .heading2-you-might-also-like-container{
+        color: rgba(0,0,0,.87);
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        display: flex; 
+        margin-left: 15px;
+  }
+  
+  .avatar-for-new-social-apps-for-shop{
+    background-color:rgb(255, 87, 34);
+    color: white;
+    border:transparent;
+  box-shadow: inset;
+  }  
+  .shopping-cart-icon-for-cart-card {
+     font-size: large;
+  }
+  
+  .card-media-image-main-container:hover .shopping-cart-icon-for-cart-card-container {
+    transform: translateY(-30px);
+  }
+  
+  /*star rating container*/ 
+  .price-and-start-rating-main-container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  } 
+
+
+/* Responsive adjustments for all devices */
+@media screen and (max-width: 768px) {
+    .product-images {
+        flex-direction: row;
+        /* Align items at the center */
+    }
+
+    .thumbnail-images {
+        margin: 0;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .thumbnail {
+        max-width: 64px;
+    }
+}
+
+
+@media screen and (width: 768px) {
+    .thumbnail {
+        max-width: 100px;
+        /* Larger thumbnails for 768px width */
+    }
+}
