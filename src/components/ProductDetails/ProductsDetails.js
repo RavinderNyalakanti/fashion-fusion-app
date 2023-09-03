@@ -6,11 +6,19 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
 import Link from "@mui/material/Link";
 import { PiCurrencyInrBold } from "react-icons/pi";
-import List from "@mui/material/List";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 const ProductsDetails = () => {
+
+  const [Color, setColor] = React.useState('');
+
+  const handleChange = (event) => {
+    setColor(event.target.value);
+  };
+
   return (
     <div className="products-details-section">
       <div className="contact-background-image-container">
@@ -65,11 +73,70 @@ const ProductsDetails = () => {
                   </ul>
 
                   <Grid container spacing={2}>
-                    <Grid lg={4}>
-                        <h2>xs=8</h2>
-                    </Grid>
-                  </Grid>
+                    <Grid lg={4} md={4} sm={12} sx={12}>
 
+                    <FormControl variant="standard" sx={{ minWidth: 120 }} className="colors_btns">
+                        <InputLabel id="demo-simple-select-standard-label">Color</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-standard-label"
+                          id="demo-simple-select-standard"
+                          onChange={handleChange}
+                          label="Color"
+                        >
+                          <MenuItem value="" > <em>None</em></MenuItem>
+                          <MenuItem value={10}>Red</MenuItem>
+                            <MenuItem value={21}>Green</MenuItem>
+                            <MenuItem value={22}>Blue</MenuItem>
+                        </Select>
+                      </FormControl>
+                        
+                       
+
+                    </Grid>
+                    <Grid lg={4} md={4} sm={12} sx={12}>
+
+                    <FormControl variant="standard" sx={{ minWidth: 120 }} className="colors_btns">
+                        <InputLabel id="demo-simple-select-standard-label">Size</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-standard-label"
+                          id="demo-simple-select-standard"
+                          onChange={handleChange}
+                          label="Size"
+                        >
+                          <MenuItem value="" > <em>None</em></MenuItem>
+                            <MenuItem value={10}>36</MenuItem>
+                            <MenuItem value={21}>38</MenuItem>
+                            <MenuItem value={22}>40</MenuItem>
+                        </Select>
+                      </FormControl>
+                        
+                        
+                    </Grid>
+                    <Grid lg={4} md={4} sm={12} sx={12}>
+                        
+                    <FormControl variant="standard" sx={{ minWidth: 120 }} className="colors_btns">
+                        <InputLabel id="demo-simple-select-standard-label">Quantity</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-standard-label"
+                          id="demo-simple-select-standard"
+                          onChange={handleChange}
+                          label="Quantity"
+                        >
+                          <MenuItem value="">
+                            <em>None</em>
+                          </MenuItem>
+                          <MenuItem value={1}>1</MenuItem>
+                          <MenuItem value={2}>2</MenuItem>
+                          <MenuItem value={3}>3</MenuItem>
+                        </Select>
+                      </FormControl>
+
+                    </Grid>
+
+
+
+                  </Grid>
+                  <Link href="#">Add To Wishlist</Link>
 
                 </div>
                 <h1>xs=8</h1>
