@@ -126,59 +126,54 @@ const products = [
     images: [thumbnile1,thumbnile2, thumbnile3, thumbnile4],
     mainImage: thumbnaimainImage, // Main image for this product
   },
-  {
-    id: 1,
-    name: 'Red Strip Dress',
-    price: 8084,
-    availability: 'In Stock',
-    productCode: '#EM1205',
-    tags: 'Red Women Outwear',
-    description:
-      'Amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!',
-    features: ['Regular Fit', 'Pure Cotton', 'Delivery in 3 Days'],
-    colors: ['red', 'green', 'blue', 'yellow'],
-    sizes: ['36', '38', '40', '42', '44', '46', '48'],
-    quantities: [1, 2, 3, 4, 5],
-    images: [womenred1, womenred2, womenred3, womenred4],
-    mainImage: womenredmainimage, // Main image for this product
-  },{
-    id: 2,
-    name: 'Blue Denim',
-    price: 4114,
-    availability: 'In Stocks',
-    productCode: ' #EM1206',
-    tags: 'Blue Outwear Denim',
-    description:
-      '  Dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!',
-    features: ['Loose Fit', 'Pure Denim', 'Free Shipping and delivery in 2 Days'],
-    colors: ['red', 'green', 'blue', 'yellow'],
-    sizes: ['36', '38', '40', '42', '44', '46', '48'],
-    quantities: [1, 2, 3, 4, 5],
-    images: [womenblue1, womenblue2,womenblue3, womenblue4],
-    mainImage: womenbluemainimage, // Main image for this product
-  },
-    {id: 3,
-    name: 'Black Dress',
-    price: 1302,
-    availability: 'In Stocks',
-    productCode: '#EM1207',
-    tags: 'Red Women Outwear',
-    description:
-      ' Consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!',
-    features: [' Slim Fit', 'Pure Cotton', 'Free Shipping and delivery in 4 Dayss'],
-    colors: ['red', 'green', 'blue', 'yellow'],
-    sizes: ['36', '38', '40', '42', '44', '46', '48'],
-    quantities: [1, 2, 3, 4, 5],
-    images: [womenblack1, womenblack2, womenblack3, womenblack4],
-    mainImage: womenblackmainimage, // Main image for this product
-  },
+  // {
+  //   id: 1,
+  //   name: 'Red Strip Dress',
+  //   price: 8084,
+  //   availability: 'In Stock',
+  //   productCode: '#EM1205',
+  //   tags: 'Red Women Outwear',
+  //   description:
+  //     'Amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!',
+  //   features: ['Regular Fit', 'Pure Cotton', 'Delivery in 3 Days'],
+  //   colors: ['red', 'green', 'blue', 'yellow'],
+  //   sizes: ['36', '38', '40', '42', '44', '46', '48'],
+  //   quantities: [1, 2, 3, 4, 5],
+  //   images: [womenred1, womenred2, womenred3, womenred4],
+  //   mainImage: womenredmainimage, // Main image for this product
+  // },{
+  //   id: 2,
+  //   name: 'Blue Denim',
+  //   price: 4114,
+  //   availability: 'In Stocks',
+  //   productCode: ' #EM1206',
+  //   tags: 'Blue Outwear Denim',
+  //   description:
+  //     '  Dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!',
+  //   features: ['Loose Fit', 'Pure Denim', 'Free Shipping and delivery in 2 Days'],
+  //   colors: ['red', 'green', 'blue', 'yellow'],
+  //   sizes: ['36', '38', '40', '42', '44', '46', '48'],
+  //   quantities: [1, 2, 3, 4, 5],
+  //   images: [womenblue1, womenblue2,womenblue3, womenblue4],
+  //   mainImage: womenbluemainimage, // Main image for this product
+  // },
+  //   {id: 3,
+  //   name: 'Black Dress',
+  //   price: 1302,
+  //   availability: 'In Stocks',
+  //   productCode: '#EM1207',
+  //   tags: 'Red Women Outwear',
+  //   description:
+  //     ' Consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!',
+  //   features: [' Slim Fit', 'Pure Cotton', 'Free Shipping and delivery in 4 Dayss'],
+  //   colors: ['red', 'green', 'blue', 'yellow'],
+  //   sizes: ['36', '38', '40', '42', '44', '46', '48'],
+  //   quantities: [1, 2, 3, 4, 5],
+  //   images: [womenblack1, womenblack2, womenblack3, womenblack4],
+  //   mainImage: womenblackmainimage, // Main image for this product
+  // },
 ];
 const ProductsDetails = () => {
- 
-  const [selectedProductIndex, setSelectedProductIndex] = useState(0);
-  const handleProductClick = (index) => {
-    setSelectedProductIndex(index);
-  };
 
   
 
@@ -193,9 +188,7 @@ const ProductsDetails = () => {
     setHoveredImages(updatedImages);
   };
 
-  const handleChange = (event) => {
-    setSelectedProductIndex(event.target.value);
-  };
+
 
   
 
@@ -245,11 +238,6 @@ const ProductsDetails = () => {
         <h1>Prodcuts Details</h1>
       </div>
      
-     {
-      
-     } 
-        
-         
             <div>
             {products.map((product, index) => (
               <div key={index} className="products-details-box">
@@ -311,7 +299,7 @@ const ProductsDetails = () => {
                                   labelId="color-label"
                                   id="color-select"
                                   value={product.colors[0]} // Default to the first color
-                                  onChange={handleChange}
+                                
                                 >
                                   {product.colors.map((color, colorIndex) => (
                                     <MenuItem key={colorIndex} value={color}>
@@ -328,7 +316,7 @@ const ProductsDetails = () => {
                                   labelId="size-label"
                                   id="size-select"
                                   value={product.sizes[0]} // Default to the first size
-                                  onChange={handleChange}
+                                 
                                 >
                                   {product.sizes.map((size, sizeIndex) => (
                                     <MenuItem key={sizeIndex} value={size}>
@@ -345,7 +333,7 @@ const ProductsDetails = () => {
                                   labelId="quantity-label"
                                   id="quantity-select"
                                   value={product.quantities[0]} // Default to the first quantity
-                                  onChange={handleChange}
+                                 
                                 >
                                   {product.quantities.map((quantity, qtyIndex) => (
                                     <MenuItem key={qtyIndex} value={quantity}>
@@ -446,7 +434,7 @@ const ProductsDetails = () => {
       {productData.map((product,index) => (
         <Grid key={product.id} item xs={12} lg={3} md={6} sm={6}    >
           <Card sx={{ maxWidth: 345 }}>
-            <div className="card-media-image-main-container" onClick={() => handleProductClick(index)}>
+            <div className="card-media-image-main-container" >
               <div className="card-media-image-container">
                 <CardMedia
                   component="img"

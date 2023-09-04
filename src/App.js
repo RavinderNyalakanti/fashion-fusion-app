@@ -49,6 +49,7 @@ function App() {
         <Route path='/category' element={<Category/>}/>
         <Route path='/accessories' element={<Accessories/>}/>
         <Route path='/admin-panel' element={<AdminPanel/>}/>
+        <Route path='/product-details' element={<ProductsDetails/>}/>
         <Route path='/contact' element={<ContactUs/>}/>
         <Route path='/checkout' element={<CheckOut/>}/>
         <Route path='/payment-details' element={<Payment/>}/>
