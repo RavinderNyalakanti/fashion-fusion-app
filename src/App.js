@@ -1,6 +1,6 @@
 
 import './App.css'; 
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import Main from './components/Main'; 
 import Home from './components/Home'
 import Shop from './components/Shop'
@@ -41,7 +41,7 @@ function App() {
         loading?
         <PropagateLoader style={{marginTop:'10px'}} color={color} loading={loading} size={10}/>
         :
-      <BrowserRouter>  
+      <Router>  
       <Main/> 
       <Routes>
         <Route path='/' element={<Home/>}/>
@@ -56,7 +56,7 @@ function App() {
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/product-details' element={<ProductsDetails/>}/>
       </Routes>
-      </BrowserRouter>
+      </Router>
       }
 
       
