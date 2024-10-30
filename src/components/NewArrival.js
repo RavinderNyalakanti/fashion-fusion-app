@@ -1,7 +1,8 @@
 import React from 'react';
 import newArrivalImage from '../assets/images/NewArrival.jpg';
 import Button from '@mui/material/Button';
-import { IoSettingsSharp } from 'react-icons/io5';
+import { IoSettingsSharp } from 'react-icons/io5'; 
+import  '../App.css'
 
 const NewArrival = () => {
     return (

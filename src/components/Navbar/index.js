@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect,useContext } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 // import { MdLocalGroceryStore } from 'react-icons/md';
@@ -9,11 +9,12 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiFillHeart } from 'react-icons/ai';
 import { AiOutlineClose } from 'react-icons/ai';
 import { AiOutlineSearch } from 'react-icons/ai';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 // import { TbSearch } from 'react-icons/tb'; 
 
 import LinkButton from '../LinkButton';
-import websiteLogo from '../../assets/images/collections/web-logo.png'
+import websiteLogo from '../../assets/images/collections/web-logo.png' 
+import { CartContext } from '../Context/CartContext'; 
 import myLogo from '../../assets/images/collections/my-image.jpg'
 // import Popup from 'reactjs-popup' 
 
@@ -39,6 +40,8 @@ import { fontSize, margin, styled } from '@mui/system';
 import Stack from '@mui/material/Stack';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
+import zIndex from '@mui/material/styles/zIndex';
+// import { get, set } from 'mongoose';
 
 
 
@@ -138,8 +141,46 @@ function Navbar() {
   // const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [activeButton, setActiveButton] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  // const [activeButton, setActiveButton] = useState(null);
+  const [username, setUsername] = useState(null); 
+  const [cartItems, setCartItems] = useState(0);
+  const [searchInput, setSearchInput] = useState('');
+  const [searchResults, setSearchResults] = useState([]); 
+const router=useNavigate()
 
+
+
+  const getCartlist=async()=>{
+    const res=await fetch(`http://localhost:4012/api/orders/?user=${localStorage.getItem("username")}`)
+    const data=await res.json() 
+    setCartItems(data.length)
+  } 
+
+  const globalSearch = async()=>{ 
+    router('/search/'+searchInput)
+   window.location.reload();
+   
+    // console.log(data)
+  } 
+
+  const handleInputChange = (event) => {
+  
+    setSearchInput(event.target.value);
+  }; 
+
+ 
+ 
+  useEffect(() => {
+    const storedUsername = localStorage.getItem('username'); 
+    console.log(storedUsername);
+    if (storedUsername) {
+      setUsername(storedUsername);
+    }
+    getCartlist()
+  }, []);  
+  // console.log(username)
+
+  
+  
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -147,6 +188,8 @@ function Navbar() {
   const popupRef = useRef(null);
 
   useEffect(() => {
+
+
     // Add a click event listener to close the pop-up when clicked outside
     const handleOutsideClick = (event) => {
       if (popupRef.current && !popupRef.current.contains(event.target)) {
@@ -178,46 +221,67 @@ function Navbar() {
 
   return (
     <header className='main-container' >
-      <div className='welcome-container'>
-        <h1 className='heading'>Welcome to our fashion store</h1>
+<div className='navbar-container'>
 
-        <ul className='list-items'>
-          <li>
-            <Stack fontSize='10px' direction="row" spacing={2}>
-              <Badge style={{marginTop:'10px',fontSize:'7px'}} badgeContent={4} color="warning">
-              <Avatar style={{ backgroundColor: '#ef5f46' }}>
-                <ShoppingCartIcon style={{height:'20px',width:'20px'}} className='shop-icon' />
-              </Avatar>
 
-              </Badge>
-              
-            </Stack>
+      <div className='input-container'>
+        <Link to='/'>
+          <div className='card-1'>
+            <img className='website-logo-img' alt='website-logo' src={websiteLogo} />
+          </div>
+        </Link>
+
+        <div className='card-2'>
+          <div className='search-container'>
+            <input placeholder='Search' type='search' className='search-input' value={searchInput} onChange={handleInputChange}  onKeyDown={(e) => e.key === 'Enter' && globalSearch()}/>
+            <AiOutlineSearch className='search-icon' onClick={globalSearch} />
+          </div>
+        </div> 
+        <ul className='list-items'> 
+          <li  className='user-name-span-card'>
+          {username ? (
+          <span >Hii, {username}</span>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
           </li>
-          <li>
+          <li> 
+            
+            <Stack fontSize='10px' direction="row" spacing={2}> 
+        
+              <Badge style={{marginTop:'10px',fontSize:'7px'}} badgeContent={(cartItems || 0)} color="warning">
+              <Avatar style={{ backgroundColor: '#ef5f46' }}>
+                <Link to="/cart">
+                <ShoppingCartIcon style={{height:'20px',width:'20px'}} className='shop-icon' />
+                </Link>
+              </Avatar>
+              </Badge>
+            </Stack>
+
+          </li>
+          {/* <li>
           <Stack fontSize='10px' direction="row" spacing={2}>
               <Badge style={{marginTop:'10px',fontSize:'5px'}} badgeContent={2} color="warning">
               <Avatar style={{marginLeft:'10px', backgroundColor: '#ef5f46' }}>
               <AiFillHeart style={{height:'20px',width:'20px'}} className='shop-icon' />
               </Avatar>
-
               </Badge>
-              
             </Stack>
-          </li>
+          </li> */}
           <li>
             <Dropdown>
-              <TriggerButton>
+                          <TriggerButton>
                 <Avatar alt="Remy Sharp" src=""/>
               </TriggerButton>
-              <Menu slots={{ listbox: StyledListbox }}>
-                <StyledMenuItem onClick={createHandleMenuClick('product')}>
+              <Menu slots={{ listbox: StyledListbox }}  className="dropdown-button-profile-card">
+                {/* <StyledMenuItem onClick={createHandleMenuClick('product')}>
                   Profile
                 </StyledMenuItem>
                 <StyledMenuItem onClick={createHandleMenuClick('cart')}>
                   Settings
-                </StyledMenuItem>
+                </StyledMenuItem> */}
                 <StyledMenuItem onClick={createHandleMenuClick('checkout')}> 
-                  <Link to='/register'> 
+                  <Link to='/login'> 
                   Logout
                   </Link>
                  
@@ -228,20 +292,6 @@ function Navbar() {
           </li>
 
         </ul>
-      </div>
-      <div className='input-container'>
-        <Link to='/'>
-          <div className='card-1'>
-            <img className='website-logo-img' alt='website-logo' src={websiteLogo} />
-          </div>
-        </Link>
-
-        <div className='card-2'>
-          <div className='search-container'>
-            <input placeholder='Search' type='search' className='search-input' />
-            <AiOutlineSearch className='search-icon' />
-          </div>
-        </div>
       </div>
       <div className='nav-container'>
         <div className='search-mobile'>
@@ -268,74 +318,49 @@ function Navbar() {
               </LinkButton>
 
             </li>
-            <li>
-              {/* <LinkButton
-              id='/shoping'
-              activeButton={activeButton}
-              setActiveButton={setActiveButton}
-            >
-              SHOPING
-            </LinkButton> */}
-              <Dropdown>
-                <TriggerButton><LinkButton
-                  id='/shoping'
-                  activeButton={activeButton}
-                  setActiveButton={setActiveButton}
-                >
-                  SHOPING
-                </LinkButton></TriggerButton>
-                <Menu slots={{ listbox: StyledListbox }}>
-                  <StyledMenuItem onClick={createHandleMenuClick('products-details')}> 
-                  <Link to='/product-details'>
-                  PRODUCT DETAILS
-                  </Link>
-                    
-                  </StyledMenuItem>
-                  <StyledMenuItem onClick={createHandleMenuClick('cart')}> 
-                    <Link to='/cart'> 
-                    CART
-                    </Link>
-                   
-                  </StyledMenuItem>
-                  <StyledMenuItem onClick={createHandleMenuClick('checkout')}> 
-                   <Link to='/checkout'>
-                   CHEKOUT
-                   </Link>
-                    
-                  </StyledMenuItem>
-                  <StyledMenuItem onClick={createHandleMenuClick('payment')}> 
-                  <Link to='/payment-details'>
-                  PAYMENT
-                   </Link>
-                   
-                  </StyledMenuItem>
-                </Menu>
-              </Dropdown>
-            </li>
-
-
-
+            
             <li>
               <LinkButton
-                id='/accessories'
+                id='/mens'
                 activeButton={activeButton}
                 setActiveButton={setActiveButton}
               >
-                ACCESSORIES
+                MENS
+              </LinkButton>
+
+            </li>
+            <li>
+              <LinkButton
+                id='/womens'
+                activeButton={activeButton}
+                setActiveButton={setActiveButton}
+              >
+                WOMENS
+              </LinkButton>
+
+            </li>
+
+            <li>
+              <LinkButton
+                id='/category'
+                activeButton={activeButton}
+                setActiveButton={setActiveButton}
+              >
+                CATEGORY
               </LinkButton>
 
             </li>
 
 
 
-            <li>
+            {/* <li>
               <Dropdown>
                 <TriggerButton><LinkButton
                   id='/category'
                   activeButton={activeButton}
                   setActiveButton={setActiveButton}
                 >
-                  CATEGORY
+                 
                 </LinkButton></TriggerButton>
                 <Menu slots={{ listbox: StyledListbox }}>
                   <StyledMenuItem onClick={createHandleMenuClick('men')}>
@@ -353,7 +378,7 @@ function Navbar() {
                 </Menu>
               </Dropdown>
 
-            </li>
+            </li> */}
 
             <li>
               <LinkButton
@@ -363,8 +388,8 @@ function Navbar() {
               >
                 CONTACT US
               </LinkButton>
-            </li>
-
+            </li> 
+           
 
             {/* <li>
               <LinkButton
@@ -379,7 +404,7 @@ function Navbar() {
 
           </ul>
         </div>
-
+        </div>
       </div>
     </header>
   );

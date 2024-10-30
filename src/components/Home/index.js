@@ -13,6 +13,7 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import Collections from '../Collections';
 import BottomContainer from '../BottomContainer';
+import Navbar from '../Navbar';
 // import { pink } from '@mui/material/colors';
 // import { positions } from '@mui/system';
 const Home = () => {
@@ -34,16 +35,17 @@ const Home = () => {
     }
   ]
   return (
-    <div className='home-main-container'>
+    <div className='home-main-container'> 
+    <Navbar />
       <div className='home-container'>
         <div className='image-container'>
           <img className='new-image' src='https://res.cloudinary.com/dpxkxorhz/image/upload/v1691327977/h-slider-1.e60ce1cc_ljn9wz.jpg' />
 
           <div className='banner-heading-box'>
-            <p className='home-para'>2023 latest collection</p>
+            <p className='home-para'>2024 latest collection</p>
             <h1 className='text-main mb-lg-25 mb-20 home-heading'>New Fashion <br/> Collection</h1>
             <h1 className='text-main mb-lg-25 mb-20 home-heading2'>New Fashion Collection</h1>
-             <Link to='/shoping'> 
+             <Link to='/mens'> 
              <Button variant="contained" color="success" className='shop_now-btn'>
             Shop Now
              </Button>

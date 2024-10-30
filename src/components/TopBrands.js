@@ -2,7 +2,8 @@ import React from "react";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick-theme.css"; 
+import "../App.css";
 // Images
 import brand1 from "../assets/images/top_brands/brand1.png";
 import brand2 from "../assets/images/top_brands/brand2.png";

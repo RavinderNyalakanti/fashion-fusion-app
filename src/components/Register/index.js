@@ -27,12 +27,18 @@ const Register = () => {
       }
       const token = response.data.token;
       localStorage.setItem('token', token);
-      alert('Register successful!');
-      window.location.replace('/login'); // Redirect to home page after successful login
+      alert('Register successful!'); 
+      setEmail(''); 
+      setPassword('');
+      setusername(''); 
+      console.log(response.data)
+     
+       window.location.replace('/login'); // Redirect to home page after successful login
     } catch (error) {
       alert(error.response.data.message);
     }
-  };
+  }; 
+  // console.log(username)
 
   return (
     <Container maxWidth="sm">

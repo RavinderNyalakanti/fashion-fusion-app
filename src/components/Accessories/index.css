@@ -1,8 +1,8 @@
 .accessoris-section{
     width: 90%;
     margin: auto;
-    padding: 50px 0px;
-
+    padding-top: 170px ; 
+    
 }
 .accessrios_select_category{
     margin-bottom: 15px;
@@ -55,4 +55,14 @@
 }
 .category-products-ratings{
     text-align: right;
-}
+} 
+.result-found-heading{
+    margin: 13px; 
+  font-family: 'cursive'; 
+  color: #0b91de; 
+  font-size: larger; 
+  font-weight: 550;
+} 
+/* .accessories-page-top-card-container{
+    margin-top: 200px;
+} */

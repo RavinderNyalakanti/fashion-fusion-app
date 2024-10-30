@@ -9,23 +9,38 @@ import {
   FormControlLabel,
   Checkbox,
 } from '@mui/material';
+// import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);  
+  const [showPassword, setShowPassword] = useState(false); 
+  // const router=useNavigate(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:4012/api/auth/login', {email: email, password: password});
-      const token = response.data.token;
+console.log(response)
+      const token = response.data.token; 
+      const username = response.data.user.name; 
       console.log(response)
+      console.log(username)
+
       localStorage.setItem('token', token);
-    
-      window.location.replace('/'); // Redirect to home page after successful login
+      
+      localStorage.setItem('username',username);  
+      localStorage.setItem('user',response.data.user.id);  
+      setEmail('');
+      setPassword('');
+      // router('/'); 
+      setTimeout(() => {
+        window.location.replace('/');
+      },2000)
+      // Redirect to home page after successful login
     } catch (error) {
       alert('Login failed. Please try again.');
+      console.log(error)
     }
   };
 
@@ -36,7 +51,7 @@ const Login = () => {
           Login
         </Typography>
         <TextField
-          label="Username"
+          label="Email"
           fullWidth
           margin="normal"
           value={email}

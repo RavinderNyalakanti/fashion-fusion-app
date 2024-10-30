@@ -1,0 +1,23 @@
+.order-placed-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+    padding-top: 300px; 
+    background-color: #fff;
+}   
+.order-placed-main-card{
+    background-color: #fff; 
+    height: 100vh;
+} 
+.image-order-placed{
+      margin: 50px;
+} 
+
+.order-placed-heading{
+    font-weight: 750; 
+    margin-bottom: 20px; 
+    font-size: 20px; 
+    margin-top: 20px; 
+    color:#2874f0;
+}

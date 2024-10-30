@@ -12,6 +12,7 @@ import womensCollection from '../../assets/images/collections/col-women.jpg';
 import watchCollection from '../../assets/images/collections/col-watches.jpg';
 import accessoriesCollection from '../../assets/images/collections/col-accessories.jpg';
 import './index.css'
+import { Link } from 'react-router-dom';
 
 const Collections = () => {
 
@@ -46,8 +47,11 @@ const Collections = () => {
                                     </div>
                                     <div className='mens-collection-text-card'>
                                         <h1 className='collections-heading'>Men's Collections</h1>
-                                        <p className='save-upto-para'>Save Upto 40%</p>
+                                        <p className='save-upto-para'>Save Upto 40%</p> 
+                                        <Link to='/mens'> 
                                         <Button className='collection-button-shop-now' variant="contained">Shop Now</Button>
+                                        </Link>
+                                        
 
                                     </div>
                                 </div>
@@ -61,8 +65,11 @@ const Collections = () => {
                                     </div>
                                     <div className='mens-collection-text-card'>
                                         <h1 className='collections-heading'>Womens Collections</h1>
-                                        <p className='save-upto-para'>Save Upto 30%</p>
-                                        <Button className='collection-button-shop-now' variant="contained">Shop Now</Button>
+                                        <p className='save-upto-para'>Save Upto 30%</p> 
+                                        <Link to='/womens'>  
+                                             <Button className='collection-button-shop-now' variant="contained">Shop Now</Button>
+                                         </Link>
+                                       
 
                                     </div>
                                 </div>
@@ -72,13 +79,15 @@ const Collections = () => {
                                 <div className='mens-image-card-main-container'>
                                     <div className='mens-image-card-collection overlap iron-gallery-item'>
                                         <img className='new-image-collection' src={watchCollection} alt="Collection" />
-                                    </div>
+                                    </div> 
+                                    <Link to='/watches'>
                                     <div className='mens-collection-text-card'>
                                         <h1 className='collections-heading'>Watches Collections</h1>
                                         <p className='save-upto-para'>Save Upto 50%</p>
                                         <Button className='collection-button-shop-now' variant="contained">Shop Now</Button>
 
-                                    </div>
+                                    </div> 
+                                    </Link>
                                 </div>
                             </Grid>
 
@@ -87,11 +96,12 @@ const Collections = () => {
                                     <div className='mens-image-card-collection overlap iron-gallery-item'>
                                         <img className='new-image-collection' src={accessoriesCollection} alt="Collection" />
                                     </div>
-                                    <div className='mens-collection-text-card'>
+                                    <div className='mens-collection-text-card'> 
+                                        <Link to='/all-accessories'>
                                         <h1 className='collections-heading'>Accessories Collections</h1>
                                         <p className='save-upto-para'>Save Upto 60%</p>
                                         <Button className='collection-button-shop-now' variant="contained">Shop Now</Button>
-
+                                        </Link>
                                     </div>
                                 </div>
                             </Grid>

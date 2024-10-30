@@ -3,7 +3,10 @@
 /* Existing styles */ 
 .main-container{
     /* overflow: auto; */
-    position:relative;
+    position:fixed;
+    z-index: 1;
+  width: 100%;
+  
 }
 .welcome-container {
     display: flex;
@@ -86,7 +89,7 @@
     padding: 8px;
     border: none;
     border-radius: 8px 0 0 5px;
-    border-color: transparent; 
+    border-color: #060b26; 
     width:400px;  
     height:40px;
   }
@@ -161,10 +164,18 @@
   width:20px; 
   margin-right:5px;
 }
-/* Additional styling for the close button */
 
+.user-name-span-card{
+  margin: 13px; 
+  font-family: 'cursive'; 
+  color: #0b91de; 
+  font-size: large; 
+  font-weight: 550;
+} 
 
-
+.dropdown-button-profile-card{
+  z-index: 10 ;
+}
 
 /*styling for the responsive */
 
@@ -176,7 +187,7 @@
         display: none;
     } 
      .input-container{
-      background-color: rgb(233, 236, 236); 
+      background-color: rgb(122, 234, 234); 
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -318,10 +329,24 @@
       display: flex; 
       flex-direction: row; 
       justify-content: space-between; 
-      background-color: rgb(233, 236, 236); 
+      background-color: rgb(247, 240, 246); 
       align-items: center; 
-      height:100px;
-    } 
+      height:100px;  
+      border-radius: 1px;
+      border-top: #0b91de 1px solid; 
+      border-bottom: #0b91de 1px solid;
+      /* border-left: #0b91de 1px solid;
+      border-right: #0b91de 1px solid; */
+    }  
+    .search-input {
+      flex: 1;
+      padding: 8px;
+      background-color: rgb(225, 228, 232);
+      border-radius: 8px 0 0 5px;
+      border-color: #060b26; 
+      width:400px;  
+      height:40px;
+    }
 
     .card-1{
       display: flex; 
@@ -375,7 +400,9 @@
   flex-direction: row; 
   justify-content: center; 
   align-items: center;
+  
  }
+
  .card-1{
   display: flex;  
   justify-content: center;
