@@ -207,7 +207,7 @@ function Navbar() {
           <li>
             <Dropdown>
               <TriggerButton>
-                <Avatar alt="Remy Sharp" src={myLogo} />
+                <Avatar alt="Remy Sharp" src=""/>
               </TriggerButton>
               <Menu slots={{ listbox: StyledListbox }}>
                 <StyledMenuItem onClick={createHandleMenuClick('product')}>
@@ -216,8 +216,11 @@ function Navbar() {
                 <StyledMenuItem onClick={createHandleMenuClick('cart')}>
                   Settings
                 </StyledMenuItem>
-                <StyledMenuItem onClick={createHandleMenuClick('checkout')}>
+                <StyledMenuItem onClick={createHandleMenuClick('checkout')}> 
+                  <Link to='/register'> 
                   Logout
+                  </Link>
+                 
                 </StyledMenuItem>
 
               </Menu>
@@ -362,16 +365,18 @@ function Navbar() {
               </LinkButton>
             </li>
 
-            <li>
+
+            {/* <li>
               <LinkButton
-                id='/admin-panel'
+                id='http://localhost:3004/reports'
                 activeButton={activeButton}
                 setActiveButton={setActiveButton}
               >
                 ADMIN PANEL
               </LinkButton>
 
-            </li>
+            </li> */}
+
           </ul>
         </div>
 

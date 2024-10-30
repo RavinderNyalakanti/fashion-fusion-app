@@ -11,6 +11,8 @@ import ContactUs from './components/ContactUs';
 import CheckOut from './components/Shop/CheckOut';
 import Payment from './components/Shop/Payment/payment';
 import Cart from './components/Shop/Cart/cart';
+import Login from './components/Login';
+import Register from './components/Register';
 // import  Login  from './components/Login'
 
 import {useState, useEffect} from 'react';
@@ -30,7 +32,7 @@ function App() {
     setLoading(true)
     setTimeout(()=>{
       setLoading(false)
-    },5000)
+    },2000)
   },[])
 
   return (
@@ -45,15 +47,18 @@ function App() {
       <Main/> 
       <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/register' element={<Register/>}/>
         <Route path='/shoping' element={<Shop/>}/>
         <Route path='/category' element={<Category/>}/>
         <Route path='/accessories' element={<Accessories/>}/>
-        <Route path='/admin-panel' element={<AdminPanel/>}/>
+        <Route path='http://localhost:3004/reports' element={<AdminPanel/>}/>
         <Route path='/product-details' element={<ProductsDetails/>}/>
         <Route path='/contact' element={<ContactUs/>}/>
         <Route path='/checkout' element={<CheckOut/>}/>
         <Route path='/payment-details' element={<Payment/>}/>
         <Route path='/cart' element={<Cart/>}/>
+        <Route path='accessories/product/:id' element={<ProductsDetails/>}/>
       </Routes>
       </Router>
       }

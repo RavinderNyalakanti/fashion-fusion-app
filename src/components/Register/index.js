@@ -10,22 +10,27 @@ import {
   Checkbox,
 } from '@mui/material';
 
-const Login = () => {
+const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [username, setusername] = useState('');
   const [showPassword, setShowPassword] = useState(false);  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4012/api/auth/login', {email: email, password: password});
-      const token = response.data.token;
+      const response = await axios.post('http://localhost:4012/api/auth/signup', {email: email, password: password, name: username});
       console.log(response)
+      if(response.status === 400){
+        alert(response.data.message);
+        return;
+      }
+      const token = response.data.token;
       localStorage.setItem('token', token);
-    
-      window.location.replace('/'); // Redirect to home page after successful login
+      alert('Register successful!');
+      window.location.replace('/login'); // Redirect to home page after successful login
     } catch (error) {
-      alert('Login failed. Please try again.');
+      alert(error.response.data.message);
     }
   };
 
@@ -33,10 +38,17 @@ const Login = () => {
     <Container maxWidth="sm">
       <Paper elevation={3} sx={{ padding: 3, marginTop: '20vh' }}>
         <Typography variant="h5" align="center" gutterBottom>
-          Login
+          Register
         </Typography>
         <TextField
           label="Username"
+          fullWidth
+          margin="normal"
+          value={username}
+          onChange={(e) => setusername(e.target.value)}
+        />
+        <TextField
+          label="Email"
           fullWidth
           margin="normal"
           value={email}
@@ -65,12 +77,12 @@ const Login = () => {
           fullWidth
 onClick={handleSubmit}
         >
-          Log In
+        Register
         </Button> 
-        <p>dont have an account? <a href="/register">Register</a></p>
+        <p>Already have an account? <a href="/login">Login</a></p>
       </Paper>
     </Container>
   );
 };
 
-export default Login;
+export default Register;
