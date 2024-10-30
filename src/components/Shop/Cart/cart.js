@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import Footer from '../../Footer'
+import Footer from '../../Footer.js'
 import './cart.css'
 import { useEffect, useState } from 'react'; 
 import { CartContext } from '../../Context/CartContext'; 

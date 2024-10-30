@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.99555842.css",
+    "main.js": "/static/js/main.cf0ff811.js",
+    "static/media/collection.jpg": "/static/media/collection.5fe86a26ac3d9d308d56.jpg",
+    "static/media/my-image.jpg": "/static/media/my-image.c8caa4b3a18af638a86f.jpg",
+    "static/media/col-accessories.jpg": "/static/media/col-accessories.971bd070ef2218aacaa1.jpg",
+    "static/media/col-watches.jpg": "/static/media/col-watches.26e099be890e8f6774aa.jpg",
+    "static/media/col-men.jpg": "/static/media/col-men.fff9a919273309e140d6.jpg",
+    "static/media/col-women.jpg": "/static/media/col-women.8c955a216a1fabcb452a.jpg",
+    "static/media/page-title-bar.3ed966eb - Copy.jpg": "/static/media/page-title-bar.3ed966eb - Copy.6cc88461f35cae8f6c95.jpg",
+    "static/media/contact-us-image.jpg": "/static/media/contact-us-image.503ff912ccdbc734a27d.jpg",
+    "static/media/NewArrival.jpg": "/static/media/NewArrival.e6aff763ad953148d145.jpg",
+    "static/media/page-crop-contact.jpg": "/static/media/page-crop-contact.d810d4b56a0fc464b6cd.jpg",
+    "static/media/g-5-a.jpg": "/static/media/g-5-a.6797a68fbd774fef8414.jpg",
+    "static/media/9-item-a.jpg": "/static/media/9-item-a.52d95a13cede2a031490.jpg",
+    "static/media/cat-shoes.jpg": "/static/media/cat-shoes.ccc8cb32edeed6c6916f.jpg",
+    "static/media/a-5-a.jpg": "/static/media/a-5-a.6fded4be0dcd4b0f7f72.jpg",
+    "static/media/web-logo.png": "/static/media/web-logo.0820470f871a8e6b8365.png",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html",
+    "main.99555842.css.map": "/static/css/main.99555842.css.map",
+    "main.cf0ff811.js.map": "/static/js/main.cf0ff811.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.99555842.css",
+    "static/js/main.cf0ff811.js"
+  ]
+}
