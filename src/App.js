@@ -15,9 +15,9 @@ import Register from './components/Register';
 import { OrderPlaced } from './components/OrderPlaced';
 import { useState, useEffect } from 'react';
 import PropagateLoader from "react-spinners/PropagateLoader";
-import ProductsDetails from './components/Shop/ProductDetails/ProductsDetails';
-import Mens from './components/Shop/Mens';
-import Womens from './components/Shop/Womens';
+import ProductsDetails from './components/ProductDetails/ProductsDetails';
+import Mens from './components/Mens';
+import Womens from './components/Womens';
 import { CartProvider } from './components/Context/CartContext';
 
 const color = ['#290af6'];

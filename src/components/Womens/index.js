@@ -14,7 +14,7 @@ import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
-import Navbar from "../../Navbar"; 
+import Navbar from "../Navbar";
 
 import PropagateLoader from "react-spinners/PropagateLoader";
 
