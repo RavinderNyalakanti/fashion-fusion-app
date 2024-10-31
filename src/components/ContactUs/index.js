@@ -2,7 +2,7 @@ import React from 'react';
 import './index.css'
 // import image from '../../assets/images/collections/contact-us-image.jpg'
 import MapContainer from '../MapContainer';
-import Footer from '../Footer'
+// import Footer from '../Footer'
 
 // import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -90,7 +90,7 @@ const ContactUs = () => {
                     </Grid>
                 </Box>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };
