@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import Footer from '../../Footer.js'
+// import Footer from '../../Footer'
 import './cart.css'
 import { useEffect, useState } from 'react'; 
 import { CartContext } from '../../Context/CartContext'; 
@@ -314,7 +314,7 @@ useEffect(() => {
         </DialogActions> 
     </Dialog>
 
-        <Footer />
+        {/* <Footer /> */}
     </div>
     </div>
     
