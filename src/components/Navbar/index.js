@@ -150,7 +150,7 @@ const router=useNavigate()
 
 
   const getCartlist=async()=>{
-    const res=await fetch(`http://localhost:4012/api/orders/?user=${localStorage.getItem("username")}`)
+    const res=await fetch(`https://fashion-fusion-backend-vymx.onrender.com/api/orders/?user=${localStorage.getItem("username")}`)
     const data=await res.json() 
     setCartItems(data.length)
   } 

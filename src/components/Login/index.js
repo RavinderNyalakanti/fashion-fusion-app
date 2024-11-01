@@ -20,7 +20,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4012/api/auth/login', {email: email, password: password});
+      const response = await axios.post('https://fashion-fusion-backend-vymx.onrender.com/api/auth/login', {email: email, password: password});
 console.log(response)
       const token = response.data.token; 
       const username = response.data.user.name; 

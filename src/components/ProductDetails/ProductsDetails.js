@@ -54,7 +54,7 @@ const ProductsDetails = () => {
   const addToCart = async () => {
     try {
       const user = localStorage.getItem('username');
-      const res = await fetch('http://localhost:4012/api/orders/', {
+      const res = await fetch('https://fashion-fusion-backend-vymx.onrender.com/api/orders/', {
         method: 'POST',
         body: JSON.stringify({
           user_id: user,

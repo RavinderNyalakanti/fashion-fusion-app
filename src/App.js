@@ -47,7 +47,7 @@ function App() {
             <Route path='/mens' element={<Mens />} />
             <Route path='/watches' element={<Mens />} />
             <Route path='/search/:category' element={<Mens />} />
-            <Route path='/shoes' element={<Womens />} />
+            <Route path='/shoes' element={<ProductsDetails />} />
             <Route path='/womens' element={<Womens />} />
             <Route path='/category' element={<Accessories />} />
             <Route path='/all-accessories' element={<Accessories />} />

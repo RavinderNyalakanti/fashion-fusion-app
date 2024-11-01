@@ -19,7 +19,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4012/api/auth/signup', {email: email, password: password, name: username});
+      const response = await axios.post('https://fashion-fusion-backend-vymx.onrender.com/api/auth/signup', {email: email, password: password, name: username});
       console.log(response)
       if(response.status === 400){
         alert(response.data.message);

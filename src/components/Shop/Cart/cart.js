@@ -42,7 +42,7 @@ const Cart = () => {
 
     const getList = async () => {
         try {
-            const res = await fetch(`http://localhost:4012/api/orders/?user=${localStorage.getItem('username')}`);
+            const res = await fetch(`https://fashion-fusion-backend-vymx.onrender.com/api/orders/?user=${localStorage.getItem('username')}`);
             const data = await res.json();
 
             if (data.length !== 0) {
@@ -72,7 +72,7 @@ const handleDeleteProduct = async (productId) => {
 const handleDeleteConfirm = async () => { 
      try {
         const userId = localStorage.getItem('username'); 
-        await fetch(`http://localhost:4012/api/orders/${ProductToDelete}/${userId}`, {
+        await fetch(`https://fashion-fusion-backend-vymx.onrender.com/api/orders/${ProductToDelete}/${userId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
