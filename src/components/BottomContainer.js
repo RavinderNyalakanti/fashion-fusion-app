@@ -3,7 +3,7 @@ import NewArrival from "./NewArrival";
 import TopBrands from "./TopBrands";
 // import NewProducts from "./NewProducts";
 import ShopByCategory from "./ShopByCategory";
-import Footer from './Footer'
+import {Footer} from './Footer.js'
 const BottomContainer = () => {
   return (
     <div>
