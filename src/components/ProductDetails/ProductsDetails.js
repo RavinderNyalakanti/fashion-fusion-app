@@ -15,7 +15,7 @@ import Stack from '@mui/material/Stack';
 import { TiSocialFacebook } from "react-icons/ti";
 import { AiOutlineTwitter, AiOutlineGoogle } from "react-icons/ai";
 import { TiSocialInstagram } from "react-icons/ti";
-import Footer from '../Footer.js';
+// import Footer from '../Footer.js';
 import Navbar from "../Navbar";
 
 import PropagateLoader from "react-spinners/PropagateLoader";
@@ -241,7 +241,7 @@ const ProductsDetails = () => {
             </DialogActions>
           </Dialog>
     
-          <Footer />
+          {/* <Footer /> */}
         </div>
       }
       
