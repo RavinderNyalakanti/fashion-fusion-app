@@ -36,13 +36,13 @@ import { MenuItem, menuItemClasses } from '@mui/base/MenuItem';
 
 import Avatar from '@mui/material/Avatar';
 // import FolderIcon from '@mui/icons-material/Folder';
-import { fontSize, margin, styled } from '@mui/system';
+import { fontSize, fontWeight, margin, styled, textAlign } from '@mui/system';
 import Stack from '@mui/material/Stack';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 import zIndex from '@mui/material/styles/zIndex';
 // import { get, set } from 'mongoose';
-
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 
 
@@ -215,7 +215,16 @@ const router=useNavigate()
     return () => {
       console.log(`Clicked on ${menuItem}`);
     };
-  };
+  }; 
+
+  const handleLogout = () => {
+    localStorage.removeItem('username');
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+        
+    window.location.replace('/login')
+
+  }
 
 
 
@@ -280,10 +289,8 @@ const router=useNavigate()
                 <StyledMenuItem onClick={createHandleMenuClick('cart')}>
                   Settings
                 </StyledMenuItem> */}
-                <StyledMenuItem onClick={createHandleMenuClick('checkout')}> 
-                  <Link to='/login'> 
-                  Logout
-                  </Link>
+                <StyledMenuItem onClick={handleLogout} color='red' style={{color:'#0b91de',fontWeight:'bold',textAlign:'center'}}> 
+                  <i  className="fa fa-sign-out" aria-hidden="true">Logout</i>
                  
                 </StyledMenuItem>
 

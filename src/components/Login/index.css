@@ -4,4 +4,11 @@ div form{
     justify-content: center; 
     align-items: center; 
     height: 100vh;
+} 
+.register-card-text-container{
+    margin: 10px;
+} 
+
+.login-heading-text-card{
+    font-weight: 850;
 }

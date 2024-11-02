@@ -1,27 +1,44 @@
 import React, { useState } from 'react'; 
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; 
+import axios from 'axios'; 
+import './index.css';
 import {
   Paper,
   Typography,
   TextField,
   Button,
   Container,
-  FormControlLabel,
-  Checkbox,
+  InputAdornment,
+  IconButton,
 } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [username, setusername] = useState('');
+  const [username, setUsername] = useState('');
   const [showPassword, setShowPassword] = useState(false);  
+  const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrors({}); // Reset errors
+
+    // Validate fields
+    const newErrors = {};
+    if (!username) newErrors.username = 'Username is required';
+    if (!email) newErrors.email = 'Email is required';
+    if (!password) newErrors.password = 'Password is required';
+    if (Object.keys(newErrors).length) {
+      setErrors(newErrors);
+      return; // Exit if there are errors
+    }
+
     try {
-      const response = await axios.post('https://fashion-fusion-backend-vymx.onrender.com/api/auth/signup', {email: email, password: password, name: username});
-      console.log(response)
-      if(response.status === 400){
+      const response = await axios.post('https://fashion-fusion-backend-vymx.onrender.com/api/auth/signup', { email, password, name: username });
+      if (response.status === 400) {
         alert(response.data.message);
         return;
       }
@@ -30,20 +47,17 @@ const Register = () => {
       alert('Register successful!'); 
       setEmail(''); 
       setPassword('');
-      setusername(''); 
-      console.log(response.data)
-     
-       window.location.replace('/login'); // Redirect to home page after successful login
+      setUsername(''); 
+      navigate('/login', { replace: true }); // Redirect to login page after successful registration
     } catch (error) {
-      alert(error.response.data.message);
+      alert(error.response?.data?.message || 'Registration failed. Please try again.');
     }
-  }; 
-  // console.log(username)
+  };
 
   return (
     <Container maxWidth="sm">
       <Paper elevation={3} sx={{ padding: 3, marginTop: '20vh' }}>
-        <Typography variant="h5" align="center" gutterBottom>
+        <Typography style={{ fontWeight: 'bolder' }} color={'primary'} variant="h5" align="center" gutterBottom>
           Register
         </Typography>
         <TextField
@@ -51,7 +65,9 @@ const Register = () => {
           fullWidth
           margin="normal"
           value={username}
-          onChange={(e) => setusername(e.target.value)}
+          onChange={(e) => setUsername(e.target.value)}
+          error={!!errors.username}
+          helperText={errors.username}
         />
         <TextField
           label="Email"
@@ -59,6 +75,8 @@ const Register = () => {
           margin="normal"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          error={!!errors.email}
+          helperText={errors.email}
         />
         <TextField
           label="Password"
@@ -66,26 +84,31 @@ const Register = () => {
           fullWidth
           margin="normal"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={showPassword}
-              onChange={() => setShowPassword(!showPassword)}
-            />
-          }
-          label="Show Password"
+          onChange={(e) => setPassword(e.target.value)} 
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton
+                  onClick={() => setShowPassword(!showPassword)}
+                  edge="end"
+                >
+                  <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+          error={!!errors.password}
+          helperText={errors.password}
         />
         <Button
           variant="contained"
           color="primary"
           fullWidth
-onClick={handleSubmit}
+          onClick={handleSubmit}
         >
-        Register
+          Register
         </Button> 
-        <p>Already have an account? <a href="/login">Login</a></p>
+        <p className='register-card-text-container'>Already have an account? <a href="/login">Login</a></p>
       </Paper>
     </Container>
   );
