@@ -63,24 +63,33 @@ function App() {
 
             {/* Protected routes */}
             <Route path="/home" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
-            <Route path="/shopping" element={isLoggedIn ? <Shop /> : <Navigate to="/login" />} />
-            <Route path="/mens" element={isLoggedIn ? <Mens /> : <Navigate to="/login" />} />
-            <Route path="/watches" element={isLoggedIn ? <Mens /> : <Navigate to="/login" />} />
-            <Route path="/shoes" element={isLoggedIn ? <ProductsDetails /> : <Navigate to="/login" />} />
-            <Route path="/womens" element={isLoggedIn ? <Womens /> : <Navigate to="/login" />} />
-            <Route path="/category" element={isLoggedIn ? <Accessories /> : <Navigate to="/login" />} />
-            <Route path="/all-accessories" element={isLoggedIn ? <Accessories /> : <Navigate to="/login" />} />
-            <Route path="/admin/reports" element={isLoggedIn ? <AdminPanel /> : <Navigate to="/login" />} />
-            <Route path="/contact" element={isLoggedIn ? <ContactUs /> : <Navigate to="/login" />} />
-            <Route path="/checkout" element={isLoggedIn ? <CheckOut /> : <Navigate to="/login" />} />
-            <Route path="/payment-details" element={isLoggedIn ? <Payment /> : <Navigate to="/login" />} />
-            <Route path="/cart" element={isLoggedIn ? <Cart /> : <Navigate to="/login" />} />  
-            <Route path="/order-placed" element={isLoggedIn ? <OrderPlaced /> : <Navigate to="/login" />} />
-            <Route path="/product/:id" element={isLoggedIn ? <ProductsDetails /> : <Navigate to="/login" />} /> 
-            <Route path="category/product/:id" element={isLoggedIn ? <ProductsDetails /> : <Navigate to="/login" />} /> 
-            <Route path="mens/product/:id" element={isLoggedIn ? <ProductsDetails /> : <Navigate to="/login" />} /> 
-            <Route path="womens/product/:id" element={isLoggedIn ? <ProductsDetails /> : <Navigate to="/login" />} /> 
-            <Route path="search/:id/product/:id" element={isLoggedIn ? <ProductsDetails /> : <Navigate to="/login" />} /> 
+            <Route path='/search' element={<Home />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/shopping' element={<Shop />} />
+            <Route path='/mens' element={<Mens />} />
+            <Route path='/watches' element={<Mens />} />
+            <Route path='/search/:category' element={<Mens />} />
+            <Route path='/shoes' element={<Womens />} />
+            <Route path='/womens' element={<Womens />} />
+            <Route path='/category' element={<Accessories />} />
+            <Route path='/all-accessories' element={<Accessories />} />
+            <Route path='/admin/reports' element={<AdminPanel />} />
+            <Route path='/product-details' element={<ProductsDetails />} />
+            <Route path='/contact' element={<ContactUs />} />
+            <Route path='/checkout' element={<CheckOut />} />
+            <Route path='/payment-details' element={<Payment />} />
+            <Route path='/cart' element={<Cart />} />  
+            <Route path='/order-placed' element={<OrderPlaced />} />
+            <Route path="/product/:id" element={<ProductsDetails />} /> 
+
+            <Route path='category/product/:id' element={<ProductsDetails />} /> 
+            <Route path='shoes/product/:id' element={<ProductsDetails />} /> 
+            <Route path='mens/product/:id' element={<ProductsDetails />} /> 
+            <Route path='womens/product/:id' element={<ProductsDetails />} /> 
+            <Route path='watches/product/:id' element={<ProductsDetails />} /> 
+
+            <Route path='search/:id/product/:id' element={<ProductsDetails />} /> 
           </Routes>
         </Router>
       )}

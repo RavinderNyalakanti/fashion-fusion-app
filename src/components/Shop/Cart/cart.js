@@ -18,6 +18,7 @@ import { Dialog, DialogTitle, TextField,DialogActions, DialogContent, DialogCont
 import Navbar from '../../Navbar';
 import { Link } from 'react-router-dom';
 import PropagateLoader from "react-spinners/PropagateLoader";
+import axios from 'axios';
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -54,7 +55,8 @@ const Cart = () => {
                 });
 
                 const products = await Promise.all(promises);
-                setCartList(products);
+                setCartList(products); 
+              
             }
         } catch (error) {
             console.log(error);
@@ -72,18 +74,20 @@ const handleDeleteProduct = async (productId) => {
 const handleDeleteConfirm = async () => { 
      try {
         const userId = localStorage.getItem('username'); 
-        await fetch(`https://fashion-fusion-backend-vymx.onrender.com/api/orders/${ProductToDelete}/${userId}`, {
-            method: 'DELETE',
+        await axios.delete(`https://fashion-fusion-backend-vymx.onrender.com/api/orders/${ProductToDelete}/${userId}`, {
             headers: {
                 'Content-Type': 'application/json',
-               
             }
-        }) 
-        setCartList(cartList.filter(item => item.product.id !== ProductToDelete))
+        })  
+
+        const updatedCartList = cartList.filter(item => item.product.id !== ProductToDelete);
+        setCartList(updatedCartList);
+        localStorage.setItem('cartList', JSON.stringify(updatedCartList)); 
+        window.location.reload();
      } catch (error) {
         console.log(error);
      } 
-     finally{
+     finally{   
         setOpenDialog(false);
         setProductToDelete(null);
      }
@@ -311,7 +315,7 @@ useEffect(() => {
         </DialogContent>
         <DialogActions> 
             <Button variant='contained' onClick={closeDialog}>Cancel</Button> 
-            <Button variant='contained' onClick={()=>{handleDeleteConfirm(); window.location.reload();}} color='error'>Delete</Button>
+            <Button variant='contained' onClick={()=>{handleDeleteConfirm();}} color='error'>Delete</Button>
         </DialogActions> 
     </Dialog>
 

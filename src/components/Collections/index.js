@@ -27,9 +27,11 @@ const Collections = () => {
                                 <img className='new-image-collection' src={newImage} alt="Collection" />
                             </div>
                             <div className='collection-text-card'>
-                                <h1 className='collections-heading'>Latest Collections</h1>
-                                <p className='save-upto-para'>Save Upto 60%</p>
-                                <Button className='collection-button-shop-now' variant="contained">Shop Now</Button>
+                                <h1 className='collections-heading'>Collections</h1>
+                                <p className='save-upto-para'>Save Upto 60%</p> 
+                                <Link to='/mens'>
+                                <Button className='collection-button-shop-now' variant="contained">Shop Now</Button> 
+                                </Link>
 
                             </div>
                         </div>
