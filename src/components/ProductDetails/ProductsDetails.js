@@ -14,7 +14,9 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { TiSocialFacebook } from "react-icons/ti";
 import { AiOutlineTwitter, AiOutlineGoogle } from "react-icons/ai";
-import { TiSocialInstagram } from "react-icons/ti";
+import { TiSocialInstagram } from "react-icons/ti"; 
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css'; // Import styles
 import Footer from '../Footer.js';
 import Navbar from "../Navbar";
 
@@ -25,6 +27,8 @@ import PropagateLoader from "react-spinners/PropagateLoader";
 const color = [
   '#290af6'
 ]
+
+
 
 const ProductsDetails = () => {
   const { id } = useParams(); // Get product ID from URL
@@ -104,9 +108,8 @@ const ProductsDetails = () => {
         </div>:
         <div className="products-details-section"> 
         <Navbar/>
-          <div className="contact-background-image-container">
-            <h1>Product Details</h1>
-          </div>
+          
+          <div className="products-details-box-main">
     
           {product ? (
             <div className="products-details-box">
@@ -125,8 +128,12 @@ const ProductsDetails = () => {
                           />
                         ))}
                       </div>
-                      <div className="main-image">
-                        <img src={hoveredImage} alt="Main Product" />
+                      <div className="main-image"> 
+
+                        <Zoom>
+                        <img src={hoveredImage} alt="Main Product"  /> 
+                        </Zoom>
+
                       </div>
                     </div>
                   </Grid>
@@ -243,7 +250,9 @@ const ProductsDetails = () => {
     
           <Footer />
         </div>
-      }
+        </div>
+      } 
+     
       
     </div>
 

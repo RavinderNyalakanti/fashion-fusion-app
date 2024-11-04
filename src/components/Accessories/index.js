@@ -74,12 +74,14 @@ const Accessories = () => {
           
           const productsData = await Promise.all(responses.map(res => res.json()));
           fetchedProducts = productsData.flatMap(data => data.products);
-        } else {
+        } 
+
+        else {
           // Fetch products based on the selected category
           const response = await fetch(categoryAPIs[selectedCategory]);
           const data = await response.json();
           fetchedProducts = data.products;
-        }
+        } 
 
         setProducts(fetchedProducts);
       } catch (error) {

@@ -19,6 +19,9 @@ import myLogo from '../../assets/images/collections/my-image.jpg'
 // import Popup from 'reactjs-popup' 
 
 import './NavBar.css';
+
+
+
 // import Typography from '@mui/material/Typography';
 // import Button from '@mui/material/Button';
 // import Popper from '@mui/material/Popper';
@@ -28,6 +31,7 @@ import './NavBar.css';
 // import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 // import LogoutIcon from '@mui/icons-material/Logout';
 // import SettingsIcon from '@mui/icons-material/Settings';
+
 
 import { Dropdown } from '@mui/base/Dropdown';
 import { Menu } from '@mui/base/Menu';
@@ -159,7 +163,6 @@ const router=useNavigate()
     router('/search/'+searchInput)
    window.location.reload();
    
-    // console.log(data)
   } 
 
   const handleInputChange = (event) => {
@@ -387,7 +390,7 @@ const router=useNavigate()
 
             </li> */}
 
-            <li>
+            {/* <li>
               <LinkButton
                 id='/contact'
                 activeButton={activeButton}
@@ -395,7 +398,7 @@ const router=useNavigate()
               >
                 CONTACT US
               </LinkButton>
-            </li> 
+            </li>  */}
            
 
             {/* <li>

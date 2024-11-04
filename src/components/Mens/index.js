@@ -89,6 +89,8 @@ const Mens = () => {
           ]
           setProducts(combinedProducts);
         }
+
+
         else if (window.location.pathname.includes("/search/")) {
           console.log(window.location.pathname)
           const watchData = await fetch(`https://dummyjson.com/products/search?q=${window.location.pathname.split("/")[2]}`);
@@ -102,8 +104,25 @@ const Mens = () => {
           ]
           setProducts(combinedProducts);
           
+        } 
+        else if (window.location.pathname === "/sunglasses") {
+
+          const glasessData = await fetch("https://dummyjson.com/products/category/sunglasses");
+
+          if (!glasessData) {
+            throw new Error("Fetching failed");
+          } 
+
+          const glasessJson = await glasessData.json();
+
+          const combinedProducts = [
+            ...glasessJson.products
+          ] 
+          setProducts(combinedProducts);
         }
-      } catch (error) {
+
+      } 
+      catch (error) {
         console.error("Error when fetching the data", error);
       }
       setLoading(false);

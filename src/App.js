@@ -69,6 +69,7 @@ function App() {
             <Route path='/shopping' element={<Shop />} />
             <Route path='/mens' element={<Mens />} />
             <Route path='/watches' element={<Mens />} />
+            <Route path='/sunglasses' element={<Mens />} />
             <Route path='/search/:category' element={<Mens />} />
             <Route path='/shoes' element={<Womens />} />
             <Route path='/womens' element={<Womens />} />
