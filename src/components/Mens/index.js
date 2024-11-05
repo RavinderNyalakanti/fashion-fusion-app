@@ -121,6 +121,85 @@ const Mens = () => {
           setProducts(combinedProducts);
         }
 
+        else if (window.location.pathname === "/clothing") {
+
+          const menShirtData = await fetch("https://dummyjson.com/products/category/mens-shirts");
+          const womenDresessData = await fetch("https://dummyjson.com/products/category/womens-dresses"); 
+          const topsData = await fetch("https://dummyjson.com/products/category/tops");
+          if (!menShirtData || !womenDresessData || !topsData) {
+            throw new Error("Fetching failed");
+          } 
+
+          const menShirtJson = await menShirtData.json();
+          const womenDresessJson = await womenDresessData.json();
+          const topsJson = await topsData.json();
+
+          const combinedProducts = [
+            ...menShirtJson.products,
+            ...womenDresessJson.products,
+            ...topsJson.products
+          ]
+          setProducts(combinedProducts);
+        }
+        else if (window.location.pathname === "/new-collections") {
+
+          const menShirtData = await fetch("https://dummyjson.com/products/category/mens-shirts");
+          const menShoesData = await fetch("https://dummyjson.com/products/category/mens-shoes");
+          const menWatchesData = await fetch("https://dummyjson.com/products/category/mens-watches");
+
+
+          const womenDresessData = await fetch("https://dummyjson.com/products/category/womens-dresses"); 
+          const womenWatchesData = await fetch("https://dummyjson.com/products/category/womens-watches"); 
+          const womenShoesData = await fetch("https://dummyjson.com/products/category/womens-shoes"); 
+          const womenJewelleryData = await fetch("https://dummyjson.com/products/category/womens-jewellery"); 
+          const womenBagsData = await fetch("https://dummyjson.com/products/category/womens-bags"); 
+
+          const sunglassesData = await fetch("https://dummyjson.com/products/category/sunglasses");
+          const skinCaresData = await fetch("https://dummyjson.com/products/category/skin-care"); 
+          const beautyData = await fetch("https://dummyjson.com/products/category/beauty"); 
+          const frgancesData = await fetch("https://dummyjson.com/products/category/fragrances");
+          
+
+          if (!menShirtData || !womenDresessData || !womenJewelleryData || !womenBagsData || !sunglassesData || !skinCaresData || !beautyData || !frgancesData) {
+            throw new Error("Fetching failed");
+          } 
+
+          const menShirtJson = await menShirtData.json(); 
+          const menShoesJson = await menShoesData.json(); 
+          const menWatchesJson = await menWatchesData.json();
+
+          const womenDresessJson = await womenDresessData.json();
+          const womenWatchesJson = await womenWatchesData.json();
+          const womenShoesJson = await womenShoesData.json();
+          const womenJewelleryJson = await womenJewelleryData.json();
+          const womenBagsJson = await womenBagsData.json(); 
+
+          const sunglassesJson = await sunglassesData.json();
+          const skinCaresJson = await skinCaresData.json();
+          const beautyJson = await beautyData.json();
+          const frgancesJson = await frgancesData.json();
+
+          const combinedProducts = [
+            ...menShirtJson.products,
+            ...menShoesJson.products,
+            ...menWatchesJson.products,
+            ...womenDresessJson.products,
+            ...womenWatchesJson.products,
+            ...womenShoesJson.products,
+            ...womenJewelleryJson.products,
+            ...womenBagsJson.products,
+            ...sunglassesJson.products,
+            ...skinCaresJson.products,
+            ...beautyJson.products,
+            ...frgancesJson.products
+          ]
+          setProducts(combinedProducts);
+        }
+
+
+
+
+
       } 
       catch (error) {
         console.error("Error when fetching the data", error);

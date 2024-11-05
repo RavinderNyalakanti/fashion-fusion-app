@@ -390,7 +390,7 @@ const router=useNavigate()
 
             </li> */}
 
-            {/* <li>
+            <li>
               <LinkButton
                 id='/contact'
                 activeButton={activeButton}
@@ -398,7 +398,7 @@ const router=useNavigate()
               >
                 CONTACT US
               </LinkButton>
-            </li>  */}
+            </li> 
            
 
             {/* <li>

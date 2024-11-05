@@ -45,7 +45,7 @@ const Home = () => {
             <p className='home-para'>2024 latest collection</p>
             <h1 className='text-main mb-lg-25 mb-20 home-heading'>New Fashion <br/> Collection</h1>
             <h1 className='text-main mb-lg-25 mb-20 home-heading2'>New Fashion Collection</h1>
-             <Link to='/mens'> 
+             <Link to='/new-collections'> 
              <Button variant="contained" color="success" className='shop_now-btn'>
             Shop Now
              </Button>

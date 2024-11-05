@@ -69,6 +69,14 @@ function App() {
             <Route path='/shopping' element={<Shop />} />
             <Route path='/mens' element={<Mens />} />
             <Route path='/watches' element={<Mens />} />
+
+            <Route path='/clothing' element={<Mens />} />
+            <Route path='/new-collections' element={<Mens />} />
+
+            <Route path='/accessories' element={<Womens />} />
+            <Route path='/gadgets' element={<Womens />} />
+
+
             <Route path='/sunglasses' element={<Mens />} />
             <Route path='/search/:category' element={<Mens />} />
             <Route path='/shoes' element={<Womens />} />
@@ -88,7 +96,14 @@ function App() {
             <Route path='shoes/product/:id' element={<ProductsDetails />} /> 
             <Route path='mens/product/:id' element={<ProductsDetails />} /> 
             <Route path='womens/product/:id' element={<ProductsDetails />} /> 
+
             <Route path='watches/product/:id' element={<ProductsDetails />} /> 
+            <Route path='new-collections/product/:id' element={<ProductsDetails />} /> 
+            <Route path='/clothing/product/:id' element={<ProductsDetails />} /> 
+            <Route path='/clothing/product/:id' element={<ProductsDetails />} /> 
+            <Route path='/accessories/product/:id' element={<ProductsDetails />} /> 
+            <Route path='/gadgets/product/:id' element={<ProductsDetails />} /> 
+            <Route path='/all-accessories/product/:id' element={<ProductsDetails />} /> 
 
             <Route path='search/:id/product/:id' element={<ProductsDetails />} /> 
           </Routes>

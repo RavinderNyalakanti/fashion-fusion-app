@@ -17,7 +17,7 @@ const NewArrival = () => {
                     <h2>Sunglasses for Everyone</h2> 
                     <Link to='/sunglasses'>
                     <Button variant="contained" color="primary">
-                        Shop Now !
+                        Shop Now
                     </Button> 
                     </Link>
                     

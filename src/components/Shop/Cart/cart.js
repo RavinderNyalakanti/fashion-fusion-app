@@ -136,10 +136,7 @@ useEffect(() => {
            <Navbar/>
     <div className='cart-details-main-container'> 
    
-        {/* <div className='cart-details-image-container'>
-            <h1 style={{ color: '#fff', fontSize: '2rem' }}>Here’s What’s In Your Bag.</h1>
-            <p style={{ color: '#fff', fontSize: '1.2rem' }}>Our Latest News And Learning Articles.</p>
-        </div> */}
+       
 
         <div className='cart-details-second-main-container'>
             {cartList.length === 0 ? (
@@ -153,7 +150,7 @@ useEffect(() => {
                 </div>
             ) : (
                 cartList.map((item) => (
-                    <div className='cart-details-second-main-container-card1' key={item.product.id}>
+                    <div className='cart-details-second-main-container-card1' key={item.product.id}  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginRight: '200px'}}>
                         <Box sx={{ flexGrow: 1 }}>
                             <Grid container spacing={6} className='grid-card-container-for-cart'>
                                
@@ -178,7 +175,7 @@ useEffect(() => {
                                     </Item>
                                 </Grid>
 
-                                <Grid item lg={2} md={6} sm={6} xs={6}>
+                                <Grid item  lg={3} md={4} sm={6} xs={12}>
                                     <Item>
                                         <div className='select-cost-final-container' style={{  display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                                             <Button style={{ backgroundColor: '#fff', color: '#000' }} variant="contained" onClick={() => {
@@ -228,6 +225,7 @@ useEffect(() => {
                                         </div>
                                     </Item>
                                 </Grid>
+
 
                                 <Grid item lg={2} md={4} sm={4} xs={6}>
                                     <Item>

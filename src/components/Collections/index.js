@@ -29,7 +29,7 @@ const Collections = () => {
                             <div className='collection-text-card'>
                                 <h1 className='collections-heading'>Collections</h1>
                                 <p className='save-upto-para'>Save Upto 60%</p> 
-                                <Link to='/mens'>
+                                <Link to='/new-collections'>
                                 <Button className='collection-button-shop-now' variant="contained">Shop Now</Button> 
                                 </Link>
 

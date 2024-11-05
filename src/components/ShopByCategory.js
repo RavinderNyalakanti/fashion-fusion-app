@@ -14,8 +14,8 @@ import "../App.css";
 const ShopByCategory = () => {
   const shopByC = [
     { id: 1, image: shoes, shopTitle: "Shoes", description: "1 product", path: "/shoes" },
-    { id: 2, image: clothing, shopTitle: "Clothing", description: "9 products", path: "/womens" },
-    { id: 3, image: accessories, shopTitle: "Accessories", description: "4 products", path: "/category" },
+    { id: 2, image: clothing, shopTitle: "Clothing", description: "9 products", path: "/clothing" },
+    { id: 3, image: accessories, shopTitle: "Accessories", description: "4 products", path: "/accessories" },
     { id: 4, image: gadgets, shopTitle: "Gadgets", description: "5 products", path: "/all-accessories" },
   ];
 

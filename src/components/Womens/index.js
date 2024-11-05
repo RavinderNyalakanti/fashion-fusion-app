@@ -102,6 +102,101 @@ const Womens = () => {
           // Set the combined shoe products
           setProducts(combinedShoeProducts);
         }
+        else if (window.location.pathname === "/gadgets") {
+         
+          const tabletsData = await fetch("https://dummyjson.com/products/category/tablets"); 
+          const smartphonesData = await fetch("https://dummyjson.com/products/category/smartphones"); 
+          const laptopsData = await fetch("https://dummyjson.com/products/category/laptops");  
+          const vehiclesData = await fetch("https://dummyjson.com/products/category/vehicle");
+          const motorcycleData = await fetch("https://dummyjson.com/products/category/motorcycle"); 
+  
+          // Check if the responses are okay
+          if (!vehiclesData.ok || !tabletsData.ok || !smartphonesData.ok || !laptopsData.ok || !motorcycleData.ok) {
+            throw new Error("Fetching failed");
+          }
+  
+          // Parse the shoe data
+          const vehiclesDataJson = await vehiclesData.json();
+          const tabletsDataJson = await tabletsData.json();
+          const smartphonesDataJson = await smartphonesData.json();
+          const laptopsDataJson = await laptopsData.json();
+          const motorcycleDataJson = await motorcycleData.json();
+          
+          // Combine the shoe products
+          const combinedShoeProducts = [
+            ...vehiclesDataJson.products,
+            ...tabletsDataJson.products,
+            ...smartphonesDataJson.products,
+            ...laptopsDataJson.products,
+            ...motorcycleDataJson.products
+          ];
+  
+          // Set the combined shoe products
+          setProducts(combinedShoeProducts);
+        }
+
+
+
+
+        else if (window.location.pathname === "/accessories") {
+          const sunglassesData = await fetch("https://dummyjson.com/products/category/sunglasses");
+          const kitchenData = await fetch("https://dummyjson.com/products/category/kitchen-accessories");
+          const mobileAccessoriesData = await fetch("https://dummyjson.com/products/category/mobile-accessories");
+          const sportsAccessoriesData = await fetch("https://dummyjson.com/products/category/sports-accessories");
+
+          const womenJewelleryData = await fetch("https://dummyjson.com/products/category/womens-jewellery"); 
+          const womensWatchesData = await fetch("https://dummyjson.com/products/category/womens-watches"); 
+          const womensBagsData = await fetch("https://dummyjson.com/products/category/womens-bags"); 
+          const womensShoesData = await fetch("https://dummyjson.com/products/category/womens-shoes"); 
+
+
+          const mensWatchesData = await fetch("https://dummyjson.com/products/category/mens-watches"); 
+          const mensShoesData = await fetch("https://dummyjson.com/products/category/mens-shoes"); 
+          const mensBagsData = await fetch("https://dummyjson.com/products/category/mens-bags"); 
+          const mensJewelleryData = await fetch("https://dummyjson.com/products/category/mens-jewellery");
+
+          if(   
+            !sunglassesData.ok || !kitchenData.ok || !mobileAccessoriesData.ok || !sportsAccessoriesData.ok ||
+            !womenJewelleryData.ok || !womensWatchesData.ok || !womensBagsData.ok || !womensShoesData.ok ||
+            !mensWatchesData.ok || !mensShoesData.ok || !mensBagsData.ok || !mensJewelleryData.ok
+          ) {
+            throw new Error("Fetching failed");
+          }
+
+          const sunglassesJson = await sunglassesData.json();
+          const kitchenJson = await kitchenData.json();
+          const mobileAccessoriesJson = await mobileAccessoriesData.json();
+          const sportsAccessoriesJson = await sportsAccessoriesData.json();
+
+          const womenJewelleryJson = await womenJewelleryData.json();
+          const womensWatchesJson = await womensWatchesData.json();
+          const womensBagsJson = await womensBagsData.json();
+          const womensShoesJson = await womensShoesData.json();
+
+          const mensWatchesJson = await mensWatchesData.json();
+          const mensShoesJson = await mensShoesData.json();
+          const mensBagsJson = await mensBagsData.json();
+          const mensJewelleryJson = await mensJewelleryData.json();
+
+          const combinedProducts = [
+            ...sunglassesJson.products,
+            ...kitchenJson.products,  
+            ...mobileAccessoriesJson.products,
+            ...sportsAccessoriesJson.products,
+            ...womenJewelleryJson.products,
+            ...womensWatchesJson.products,
+            ...womensBagsJson.products,
+            ...womensShoesJson.products,
+            ...mensWatchesJson.products,
+            ...mensShoesJson.products,
+            ...mensBagsJson.products,
+            ...mensJewelleryJson.products
+          ];
+          
+          setProducts(combinedProducts);
+        }
+      
+
       } catch (error) {
         console.error("Error when fetching the data", error);
       } finally {
